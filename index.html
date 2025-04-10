@@ -10,21 +10,34 @@
       background: linear-gradient(135deg, #f72585, #7209b7, #3a0ca3);
       color: #fff;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+      text-align: center;
+      position: relative;
+    }
+
+    /* Imagen decorativa al fondo, detrás del contenido */
+    .imagen-deco {
+      position: absolute;
+      top: 55%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60%;
+      max-width: 600px;
+      opacity: 0.12;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Contenido principal arriba de la imagen */
+    .contenido {
+      position: relative;
+      z-index: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: start;
-      min-height: 100vh;
-      overflow-x: hidden;
-      text-align: center;
-    }
-
-    .imagen-deco {
-      max-width: 80%;
-      height: auto;
-      margin-top: 40px;
-      border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      padding-top: 40px;
     }
 
     h1 {
@@ -100,27 +113,30 @@
 </head>
 <body>
 
-  <!-- Imagen decorativa -->
+  <!-- Imagen decorativa de fondo -->
   <img class="imagen-deco" src="A_colorful_digital_illustration_depicts_four_young.png" alt="Imagen de amigos celebrando" />
 
-  <h1>🎉 ¡FELIZ CUMPLE AGUS! 🎉</h1>
+  <!-- Contenido principal -->
+  <div class="contenido">
+    <h1>🎉 ¡FELIZ CUMPLE AGUS! 🎉</h1>
 
-  <p class="mensaje-amor">
-    💌 <strong>Querido Agus</strong>, esperamos que tengas un día muy hermoso y lleno de alegría.  
-    🌟 Que siempre seas feliz y se cumplan todos tus sueños.  
-    🎂💫💝 Te amamos mucho.  
-    Con todo nuestro amor: <strong>Cande, Sere y Manu</strong> 💕🌈🎈💐🦋
-  </p>
+    <p class="mensaje-amor">
+      💌 <strong>Querido Agus</strong>, esperamos que tengas un día muy hermoso y lleno de alegría.  
+      🌟 Que siempre seas feliz y se cumplan todos tus sueños.  
+      🎂💫💝 Te amamos mucho.  
+      Con todo nuestro amor: <strong>Cande, Sere y Manu</strong> 💕🌈🎈💐🦋
+    </p>
 
-  <div id="gift-section">
-    <button id="giftBtn">🎁 OBTENER REGALO</button>
-    <div id="giftReveal">
-      <div class="codigo">
-        <a href="https://shakacmmnty.com.ar/" target="_blank">
-          Código: FELIZCUMPLEAGUS
-        </a>
-        <div class="nota">
-          Clickea y usa este código en ... 😜<br>
+    <div id="gift-section">
+      <button id="giftBtn">🎁 OBTENER REGALO</button>
+      <div id="giftReveal">
+        <div class="codigo">
+          <a href="https://shakacmmnty.com.ar/" target="_blank">
+            Código: FELIZCUMPLEAGUS
+          </a>
+          <div class="nota">
+            Clickea y usa este código en ... 😜<br>
+          </div>
         </div>
       </div>
     </div>
