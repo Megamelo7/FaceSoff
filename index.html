@@ -15,7 +15,7 @@
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-      overflow: hidden;
+      overflow-x: hidden;
     }
 
     h1 {
@@ -50,10 +50,50 @@
     .gallery img:hover {
       transform: scale(1.05);
     }
+
+    #gift-section {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    #giftBtn {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      background-color: #ffbe0b;
+      color: #000;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    #giftBtn:hover {
+      background-color: #ffd60a;
+    }
+
+    #giftMessage {
+      margin-top: 20px;
+      display: none;
+      font-size: 1.5em;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    #giftImage {
+      margin-top: 20px;
+      max-width: 300px;
+      display: none;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
 <body>
   <h1>🎉 ¡FELIZ CUMPLE AGUS! 🎉</h1>
+
   <div class="gallery">
     <img src="https://source.unsplash.com/300x200/?abstract,colors" alt="abstract1">
     <img src="https://source.unsplash.com/301x200/?abstract,art" alt="abstract2">
@@ -62,6 +102,22 @@
     <img src="https://source.unsplash.com/304x200/?gradient,abstract" alt="abstract5">
     <img src="https://source.unsplash.com/305x200/?modern,pattern" alt="abstract6">
   </div>
+
+  <div id="gift-section">
+    <button id="giftBtn">🎁 OBTENER REGALO</button>
+    <div id="giftMessage">🎉 ¡TE REGALAMOS UNA GIFT CARD EN SHAKA!</div>
+    <img id="giftImage" src="image.png" alt="Gift Card Shaka">
+  </div>
+
+  <script>
+    const btn = document.getElementById("giftBtn");
+    const msg = document.getElementById("giftMessage");
+    const img = document.getElementById("giftImage");
+
+    btn.addEventListener("click", () => {
+      msg.style.display = "block";
+      img.style.display = "block";
+    });
+  </script>
 </body>
 </html>
-
