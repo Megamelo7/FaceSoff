@@ -13,31 +13,13 @@
       min-height: 100vh;
       overflow-x: hidden;
       text-align: center;
-      position: relative;
     }
 
-    /* Imagen decorativa */
-    .imagen-deco {
-      position: absolute;
-      top: 55%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 60%;
-      max-width: 600px;
-      opacity: 0.12;
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    /* Contenido principal */
     .contenido {
-      position: relative;
-      z-index: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: start;
-      padding-top: 40px;
+      padding: 40px 20px;
     }
 
     h1 {
@@ -48,7 +30,7 @@
 
     .mensaje-amor {
       font-size: 1.4em;
-      margin: 0 30px 180px;
+      margin: 0 30px 50px;
       max-width: 750px;
       line-height: 1.7;
       font-style: italic;
@@ -61,8 +43,16 @@
       100% { transform: scale(1); opacity: 1; }
     }
 
+    .imagen-deco {
+      width: 100%;
+      max-width: 500px;
+      margin: 20px 0 50px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px #00000055;
+    }
+
     #gift-section {
-      margin-top: 30px;
+      margin-top: 0px;
     }
 
     #giftBtn {
@@ -112,11 +102,6 @@
   </style>
 </head>
 <body>
-
-  <!-- Imagen decorativa de fondo -->
-  <img class="imagen-deco" src="A_colorful_digital_illustration_depicts_four_young.png" alt="Imagen de amigos celebrando" />
-
-  <!-- Contenido principal -->
   <div class="contenido">
     <h1>🎉 ¡FELIZ CUMPLE AGUS! 🎉</h1>
 
@@ -126,6 +111,9 @@
       🎂💫💝 Te amamos mucho.  
       Con todo nuestro amor: <strong>Cande, Sere y Manu</strong> 💕🌈🎈💐🦋
     </p>
+
+    <!-- Imagen decorativa entre el mensaje y el botón -->
+    <img class="imagen-deco" src="A_colorful_digital_illustration_depicts_four_young.png" alt="Imagen decorativa de celebración" />
 
     <div id="gift-section">
       <button id="giftBtn">🎁 OBTENER REGALO</button>
