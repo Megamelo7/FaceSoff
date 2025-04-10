@@ -37,4 +37,102 @@
       font-size: 1.4em;
       margin: 0 30px 30px;
       max-width: 750px;
-      line-height
+      line-height: 1.7;
+      font-style: italic;
+      color: #ffe8f0;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.9; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    #gift-section {
+      margin-top: 30px;
+    }
+
+    #giftBtn {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      background-color: #ffbe0b;
+      color: #000;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    #giftBtn:hover {
+      background-color: #ffd60a;
+    }
+
+    #giftReveal {
+      margin-top: 30px;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .codigo a {
+      font-size: 1.4em;
+      background: #00000066;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-weight: bold;
+      color: #ffdd57;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .codigo a:hover {
+      background: #00000088;
+    }
+
+    .nota {
+      font-size: 0.9em;
+      color: #ffcad4;
+      margin-top: 5px;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Imagen decorativa -->
+  <img class="imagen-deco" src="A_colorful_digital_illustration_depicts_four_young.png" alt="Imagen de amigos celebrando" />
+
+  <h1>🎉 ¡FELIZ CUMPLE AGUS! 🎉</h1>
+
+  <p class="mensaje-amor">
+    💌 <strong>Querido Agus</strong>, esperamos que tengas un día muy hermoso y lleno de alegría.  
+    🌟 Que siempre seas feliz y se cumplan todos tus sueños.  
+    🎂💫💝 Te amamos mucho.  
+    Con todo nuestro amor: <strong>Cande, Sere y Manu</strong> 💕🌈🎈💐🦋
+  </p>
+
+  <div id="gift-section">
+    <button id="giftBtn">🎁 OBTENER REGALO</button>
+    <div id="giftReveal">
+      <div class="codigo">
+        <a href="https://shakacmmnty.com.ar/" target="_blank">
+          Código: FELIZCUMPLEAGUS
+        </a>
+        <div class="nota">
+          Clickea y usa este código en ... 😜<br>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const btn = document.getElementById("giftBtn");
+    const reveal = document.getElementById("giftReveal");
+
+    btn.addEventListener("click", () => {
+      reveal.style.display = "flex";
+    });
+  </script>
+</body>
+</html>
