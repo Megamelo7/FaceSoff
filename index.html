@@ -16,12 +16,12 @@
       justify-content: center;
       min-height: 100vh;
       overflow-x: hidden;
+      text-align: center;
     }
 
     h1 {
       font-size: 4em;
-      text-align: center;
-      margin: 20px;
+      margin: 40px 20px 20px;
       animation: pulse 2s infinite;
     }
 
@@ -31,29 +31,8 @@
       100% { transform: scale(1); opacity: 1; }
     }
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 15px;
-      width: 80%;
-      max-width: 1000px;
-      margin-top: 30px;
-    }
-
-    .gallery img {
-      width: 100%;
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.3);
-      transition: transform 0.3s;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-
     #gift-section {
       margin-top: 40px;
-      text-align: center;
     }
 
     #giftBtn {
@@ -93,15 +72,6 @@
 </head>
 <body>
   <h1>🎉 ¡FELIZ CUMPLE AGUS! 🎉</h1>
-
-  <div class="gallery">
-    <img src="https://source.unsplash.com/300x200/?abstract,colors" alt="abstract1">
-    <img src="https://source.unsplash.com/301x200/?abstract,art" alt="abstract2">
-    <img src="https://source.unsplash.com/302x200/?shapes,colors" alt="abstract3">
-    <img src="https://source.unsplash.com/303x200/?design,bright" alt="abstract4">
-    <img src="https://source.unsplash.com/304x200/?gradient,abstract" alt="abstract5">
-    <img src="https://source.unsplash.com/305x200/?modern,pattern" alt="abstract6">
-  </div>
 
   <div id="gift-section">
     <button id="giftBtn">🎁 OBTENER REGALO</button>
