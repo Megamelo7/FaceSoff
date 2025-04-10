@@ -67,28 +67,19 @@
       gap: 15px;
     }
 
-    #giftReveal img {
-      max-width: 250px;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: transform 0.3s;
-    }
-
-    #giftReveal img:hover {
-      transform: scale(1.05);
-    }
-
-    .codigo {
+    .codigo a {
       font-size: 1.4em;
       background: #00000066;
       padding: 10px 15px;
       border-radius: 8px;
       font-weight: bold;
       color: #ffdd57;
+      text-decoration: none;
+      transition: background 0.3s;
     }
 
-    a {
-      text-decoration: none;
+    .codigo a:hover {
+      background: #00000088;
     }
   </style>
 </head>
@@ -105,10 +96,11 @@
   <div id="gift-section">
     <button id="giftBtn">🎁 OBTENER REGALO</button>
     <div id="giftReveal">
-      <a href="https://shakacmmnty.com.ar/" target="_blank">
-        <img src="shaka.png" alt="Gift Shaka">
-      </a>
-      <div class="codigo">Código: FELIZCUMPLEAGUS</div>
+      <div class="codigo">
+        <a href="https://shakacmmnty.com.ar/" target="_blank">
+          Código: FELIZCUMPLEAGUS
+        </a>
+      </div>
     </div>
   </div>
 
