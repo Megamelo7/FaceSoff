@@ -59,36 +59,36 @@
       background-color: #ffd60a;
     }
 
-    #giftCode {
-      margin-top: 20px;
+    #giftReveal {
+      margin-top: 30px;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    #giftReveal img {
+      max-width: 250px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    #giftReveal img:hover {
+      transform: scale(1.05);
+    }
+
+    .codigo {
       font-size: 1.4em;
-      display: none;
-    }
-
-    #giftCode a {
-      color: #ffdd57;
-      font-weight: bold;
-      text-decoration: none;
       background: #00000066;
-      padding: 5px 10px;
+      padding: 10px 15px;
       border-radius: 8px;
-      transition: background 0.3s;
+      font-weight: bold;
+      color: #ffdd57;
     }
 
-    #giftCode a:hover {
-      background: #ffffff22;
-    }
-
-    #giftImage {
-      margin-top: 20px;
-      max-width: 300px;
-      display: none;
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    a {
+      text-decoration: none;
     }
   </style>
 </head>
@@ -104,20 +104,20 @@
 
   <div id="gift-section">
     <button id="giftBtn">🎁 OBTENER REGALO</button>
-    <div id="giftCode">
-      Código: <a href="https://shakacmmnty.com.ar/" target="_blank">FELIZCUMPLEAGUS</a>
+    <div id="giftReveal">
+      <a href="https://shakacmmnty.com.ar/" target="_blank">
+        <img src="shaka.png" alt="Gift Shaka">
+      </a>
+      <div class="codigo">Código: FELIZCUMPLEAGUS</div>
     </div>
-    <img id="giftImage" src="image.png" alt="Gift Card Shaka">
   </div>
 
   <script>
     const btn = document.getElementById("giftBtn");
-    const code = document.getElementById("giftCode");
-    const img = document.getElementById("giftImage");
+    const reveal = document.getElementById("giftReveal");
 
     btn.addEventListener("click", () => {
-      code.style.display = "block";
-      img.style.display = "block";
+      reveal.style.display = "flex";
     });
   </script>
 </body>
