@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>¡FELIZ CUMPLE AGUS!</title>
   <style>
-    /* Estilos generales */
     body {
       margin: 0;
       padding: 0;
@@ -12,136 +11,128 @@
       color: #fff;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: start;
       min-height: 100vh;
       overflow-x: hidden;
       text-align: center;
-      position: relative; /* Para posicionar elementos absolutos dentro */
     }
 
-    /* Contenedor principal */
-    .container {
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 30px;
+    .imagen-deco {
+      max-width: 80%;
+      height: auto;
+      margin-top: 40px;
       border-radius: 20px;
-      max-width: 600px;
-      margin: 20px;
-      z-index: 1; /* Asegura que se muestre sobre la imagen decorativa */
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
 
     h1 {
-      font-size: 3em;
-      margin-bottom: 20px;
+      font-size: 4em;
+      margin: 30px 20px 10px;
       animation: pulse 2s infinite;
     }
 
-    .mensaje {
-      font-size: 1.3em;
-      margin-bottom: 30px;
-      line-height: 1.5;
+    .mensaje-amor {
+      font-size: 1.4em;
+      margin: 0 30px 30px;
+      max-width: 750px;
+      line-height: 1.7;
+      font-style: italic;
+      color: #ffe8f0;
     }
 
-    /* Botón para desplegar regalo */
-    button {
-      background-color: #ff66cc;
-      color: white;
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.9; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    #gift-section {
+      margin-top: 30px;
+    }
+
+    #giftBtn {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      background-color: #ffbe0b;
+      color: #000;
       border: none;
-      padding: 15px 25px;
-      font-size: 1em;
       border-radius: 10px;
       cursor: pointer;
-      transition: background-color 0.3s;
-      margin-top: 20px;
-      z-index: 1;
-    }
-    
-    button:hover {
-      background-color: #e055b3;
+      transition: background 0.3s;
     }
 
-    /* Sección oculta que se muestra al hacer clic */
-    .regalo {
-      display: none;
-      margin-top: 20px;
-      font-size: 1.2em;
-      background-color: rgba(255,255,255,0.1);
-      padding: 20px;
-      border-radius: 10px;
-      z-index: 1;
+    #giftBtn:hover {
+      background-color: #ffd60a;
     }
-    
+
+    #giftReveal {
+      margin-top: 30px;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
     .codigo a {
-      font-size: 1.5em;
-      color: #ffff66;
-      font-weight: bold;
-      text-decoration: none;
+      font-size: 1.4em;
       background: #00000066;
       padding: 10px 15px;
       border-radius: 8px;
+      font-weight: bold;
+      color: #ffdd57;
+      text-decoration: none;
       transition: background 0.3s;
     }
-    
+
     .codigo a:hover {
       background: #00000088;
     }
-    
+
     .nota {
       font-size: 0.9em;
       color: #ffcad4;
       margin-top: 5px;
       line-height: 1.4;
     }
-    
-    /* Imagen decorativa posicionada debajo de todo (no como background) */
-    .imagen-deco {
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 90%;
-      max-width: 800px;
-      opacity: 0.2;
-      z-index: 0;
-      pointer-events: none;
-    }
-    
-    @keyframes pulse {
-      0% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.1); opacity: 0.9; }
-      100% { transform: scale(1); opacity: 1; }
-    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>🎉 ¡FELIZ CUMPLE AGUS! 🎉</h1>
-    <div class="mensaje">
-      Querido Agus, esperamos que tengas un día muy hermoso y lleno de alegría.  
-      Que siempre seas feliz y se cumplan todos tus sueños.  
-      Te amamos mucho.  
-      <br>💖 Cande, Sere y Manu 💖✨🎈🎂🎁🎊💫
-    </div>
-    <button onclick="mostrarRegalo()">OBTENER REGALO</button>
-    <div class="regalo" id="regalo">
-      <p>🎁 Te regalamos una Gift Card en:</p>
+
+  <!-- Imagen decorativa -->
+  <img class="imagen-deco" src="A_colorful_digital_illustration_depicts_four_young.png" alt="Imagen de amigos celebrando" />
+
+  <h1>🎉 ¡FELIZ CUMPLE AGUS! 🎉</h1>
+
+  <p class="mensaje-amor">
+    💌 <strong>Querido Agus</strong>, esperamos que tengas un día muy hermoso y lleno de alegría.  
+    🌟 Que siempre seas feliz y se cumplan todos tus sueños.  
+    🎂💫💝 Te amamos mucho.  
+    Con todo nuestro amor: <strong>Cande, Sere y Manu</strong> 💕🌈🎈💐🦋
+  </p>
+
+  <div id="gift-section">
+    <button id="giftBtn">🎁 OBTENER REGALO</button>
+    <div id="giftReveal">
       <div class="codigo">
-        <a href="https://shakacmmnty.com.ar/" target="_blank">FELIZCUMPLEAGUS</a>
-      </div>
-      <div class="nota">
-        Clickea y usa este código en ... 😜👀<br>
-        Esto es un cupón de descuento en...
+        <a href="https://shakacmmnty.com.ar/" target="_blank">
+          Código: FELIZCUMPLEAGUS
+        </a>
+        <div class="nota">
+          Clickea y usa este código en ... 😜<br>
+        </div>
       </div>
     </div>
   </div>
-  
-  <!-- Imagen decorativa debajo de todo -->
-  <img class="imagen-deco" src="A_colorful_digital_illustration_depicts_four_young.png" alt="Decoración de cumpleaños" />
 
   <script>
-    function mostrarRegalo() {
-      document.getElementById('regalo').style.display = 'block';
-    }
+    const btn = document.getElementById("giftBtn");
+    const reveal = document.getElementById("giftReveal");
+
+    btn.addEventListener("click", () => {
+      reveal.style.display = "flex";
+    });
   </script>
 </body>
 </html>
