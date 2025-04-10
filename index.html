@@ -26,10 +26,10 @@
     }
 
     .mensaje-amor {
-      font-size: 1.5em;
+      font-size: 1.4em;
       margin: 0 30px 30px;
-      max-width: 700px;
-      line-height: 1.6;
+      max-width: 750px;
+      line-height: 1.7;
       font-style: italic;
       color: #ffe8f0;
     }
@@ -59,15 +59,8 @@
       background-color: #ffd60a;
     }
 
-    #giftMessage {
-      margin-top: 20px;
-      display: none;
-      font-size: 1.5em;
-      animation: fadeIn 1s ease-in-out;
-    }
-
     #giftCode {
-      margin-top: 10px;
+      margin-top: 20px;
       font-size: 1.4em;
       display: none;
     }
@@ -102,11 +95,15 @@
 <body>
   <h1>🎉 ¡FELIZ CUMPLE AGUS! 🎉</h1>
 
-  <p class="mensaje-amor">Esperamos que pases un hermoso día y que seas muy feliz. Te amamos ♥️<br>Cande, Sere y Manu</p>
+  <p class="mensaje-amor">
+    💌 <strong>Querido Agus</strong>, esperamos que tengas un día muy hermoso y lleno de alegría.  
+    🌟 Que siempre seas feliz y se cumplan todos tus sueños.  
+    🎂💫💝 Te amamos mucho.  
+    Con todo nuestro amor: <strong>Cande, Sere y Manu</strong> 💕🌈🎈💐🦋
+  </p>
 
   <div id="gift-section">
     <button id="giftBtn">🎁 OBTENER REGALO</button>
-    <div id="giftMessage">🎉 ¡TE REGALAMOS UNA GIFT CARD EN SHAKA!</div>
     <div id="giftCode">
       Código: <a href="https://shakacmmnty.com.ar/" target="_blank">FELIZCUMPLEAGUS</a>
     </div>
@@ -115,12 +112,10 @@
 
   <script>
     const btn = document.getElementById("giftBtn");
-    const msg = document.getElementById("giftMessage");
     const code = document.getElementById("giftCode");
     const img = document.getElementById("giftImage");
 
     btn.addEventListener("click", () => {
-      msg.style.display = "block";
       code.style.display = "block";
       img.style.display = "block";
     });
