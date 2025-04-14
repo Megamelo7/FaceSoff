@@ -2,141 +2,91 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>¡FELIZ CUMPLE AGUS!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estilo & Bienestar</title>
   <style>
     body {
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #f72585, #7209b7, #3a0ca3);
-      color: #fff;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      min-height: 100vh;
-      overflow-x: hidden;
+      background-color: #fff7f0;
+      color: #333;
+    }
+    header {
+      background-color: #f2c6b4;
+      padding: 2rem;
       text-align: center;
     }
-
-    .contenido {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px 20px;
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
     }
-
-    h1 {
-      font-size: 4em;
-      margin: 30px 20px 10px;
-      animation: pulse 2s infinite;
+    nav {
+      text-align: center;
+      margin: 1rem 0;
     }
-
-    .mensaje-amor {
-      font-size: 1.4em;
-      margin: 0 30px 50px;
-      max-width: 750px;
-      line-height: 1.7;
-      font-style: italic;
-      color: #ffe8f0;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.1); opacity: 0.9; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-
-    .imagen-deco {
-      width: 100%;
-      max-width: 500px;
-      margin: 20px 0 50px;
-      border-radius: 20px;
-      box-shadow: 0 0 25px #00000055;
-    }
-
-    #gift-section {
-      margin-top: 0px;
-    }
-
-    #giftBtn {
-      padding: 15px 30px;
-      font-size: 1.2em;
-      background-color: #ffbe0b;
-      color: #000;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    #giftBtn:hover {
-      background-color: #ffd60a;
-    }
-
-    #giftReveal {
-      margin-top: 30px;
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .codigo a {
-      font-size: 1.4em;
-      background: #00000066;
-      padding: 10px 15px;
-      border-radius: 8px;
-      font-weight: bold;
-      color: #ffdd57;
+    nav a {
+      margin: 0 1rem;
       text-decoration: none;
-      transition: background 0.3s;
+      color: #a35b4b;
+      font-weight: bold;
     }
-
-    .codigo a:hover {
-      background: #00000088;
+    section {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
     }
-
-    .nota {
-      font-size: 0.9em;
-      color: #ffcad4;
-      margin-top: 5px;
-      line-height: 1.4;
+    .service {
+      margin-bottom: 2rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #f2c6b4;
+      color: #333;
     }
   </style>
 </head>
 <body>
-  <div class="contenido">
-    <h1>🎉 ¡FELIZ CUMPLE AGUS! 🎉</h1>
 
-    <p class="mensaje-amor">
-      💌 <strong>Querido Agus</strong>, esperamos que tengas un día muy hermoso y lleno de alegría.  
-      🌟 Que siempre seas feliz y se cumplan todos tus sueños.  
-      🎂💫💝 Te amamos mucho.  
-      Con todo nuestro amor: <strong>Cande, Sere y Manu</strong> 💕🌈🎈💐🦋
-    </p>
+<header>
+  <h1>Estilo & Bienestar</h1>
+  <p>Estilismo facial y masajes relajantes</p>
+</header>
 
-    <!-- Imagen decorativa entre el mensaje y el botón -->
-    <img class="imagen-deco" src="A_colorful_digital_illustration_depicts_four_young.png" alt="Imagen decorativa de celebración" />
+<nav>
+  <a href="#servicios">Servicios</a>
+  <a href="#nosotros">Sobre mí</a>
+  <a href="#contacto">Contacto</a>
+</nav>
 
-    <div id="gift-section">
-      <button id="giftBtn">🎁 OBTENER REGALO</button>
-      <div id="giftReveal">
-        <div class="codigo">
-          <a href="https://shakacmmnty.com.ar/" target="_blank">
-            Código: FELIZCUMPLEAGUS
-          </a>
-          <div class="nota">
-            Clickea y usa este código en ... 😜<br>
-          </div>
-        </div>
-      </div>
-    </div>
+<section id="servicios">
+  <h2>Servicios</h2>
+  <div class="service">
+    <h3>Estilismo Facial</h3>
+    <p>Tratamientos personalizados para rejuvenecer y realzar tu rostro. Cejas, limpieza profunda y más.</p>
   </div>
+  <div class="service">
+    <h3>Masajes</h3>
+    <p>Masajes relajantes, descontracturantes y faciales para armonizar cuerpo y mente.</p>
+  </div>
+</section>
 
-  <script>
-    const btn = document.getElementById("giftBtn");
-    const reveal = document.getElementById("giftReveal");
+<section id="nosotros">
+  <h2>Sobre mí</h2>
+  <p>Soy Laura, profesional con más de 10 años de experiencia ayudando a las personas a sentirse y verse mejor. Mi enfoque combina técnicas naturales con un toque personalizado.</p>
+</section>
 
-    btn.addEventListener("click", () => {
-      reveal.style.display = "flex";
-    });
-  </script>
+<section id="contacto">
+  <h2>Contacto</h2>
+  <p>📍 Ubicación: Palermo, CABA<br>
+     📞 Teléfono: 11 1234-5678<br>
+     📧 Email: contacto@estiloybienestar.com</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Estilo & Bienestar. Todos los derechos reservados.</p>
+</footer>
+
 </body>
 </html>
