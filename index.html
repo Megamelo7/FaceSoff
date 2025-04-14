@@ -2,148 +2,141 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FaceSof by Sofía Bareiro</title>
+  <title>¡FELIZ CUMPLE AGUS!</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      background: #fff8f5;
-      color: #5a4a42;
-    }
-    header {
-      background: linear-gradient(135deg, #f7d3d3, #fce9f1);
-      text-align: center;
-      padding: 3rem 1rem 2rem;
-    }
-    header h1 {
-      font-size: 3rem;
-      margin: 0;
-      color: #b35b76;
-    }
-    header p {
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
-    }
-    nav {
-      background-color: #f3c9d4;
-      padding: 0.5rem;
+      padding: 0;
+      background: linear-gradient(135deg, #f72585, #7209b7, #3a0ca3);
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
       text-align: center;
     }
-    nav a {
-      margin: 0 1rem;
-      text-decoration: none;
-      color: #81374c;
-      font-weight: bold;
+
+    .contenido {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
     }
-    section {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1rem;
+
+    h1 {
+      font-size: 4em;
+      margin: 30px 20px 10px;
+      animation: pulse 2s infinite;
     }
-    .service {
-      background-color: #fdf1f4;
-      border-left: 5px solid #e6a1b2;
-      padding: 1rem;
-      margin-bottom: 1.5rem;
-      border-radius: 10px;
+
+    .mensaje-amor {
+      font-size: 1.4em;
+      margin: 0 30px 50px;
+      max-width: 750px;
+      line-height: 1.7;
+      font-style: italic;
+      color: #ffe8f0;
     }
-    #agendarBtn {
-      display: block;
-      margin: 2rem auto;
-      background-color: #e6a1b2;
-      color: white;
-      border: none;
-      padding: 1rem 2rem;
-      font-size: 1.1rem;
-      border-radius: 25px;
-      cursor: pointer;
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.9; }
+      100% { transform: scale(1); opacity: 1; }
     }
-    #formularioTurno {
-      display: none;
-      background-color: #fff;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      max-width: 400px;
-      margin: 1rem auto;
-    }
-    input {
+
+    .imagen-deco {
       width: 100%;
-      padding: 0.8rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
+      max-width: 500px;
+      margin: 20px 0 50px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px #00000055;
     }
-    footer {
-      background-color: #f7d3d3;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
+
+    #gift-section {
+      margin-top: 0px;
+    }
+
+    #giftBtn {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      background-color: #ffbe0b;
+      color: #000;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    #giftBtn:hover {
+      background-color: #ffd60a;
+    }
+
+    #giftReveal {
+      margin-top: 30px;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .codigo a {
+      font-size: 1.4em;
+      background: #00000066;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-weight: bold;
+      color: #ffdd57;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .codigo a:hover {
+      background: #00000088;
+    }
+
+    .nota {
+      font-size: 0.9em;
+      color: #ffcad4;
+      margin-top: 5px;
+      line-height: 1.4;
     }
   </style>
 </head>
 <body>
+  <div class="contenido">
+    <h1>🎉 ¡FELIZ CUMPLE AGUS! 🎉</h1>
 
-<header>
-  <h1>FaceSof</h1>
-  <p>by Sofía Bareiro · Estilismo Facial & Masajes</p>
-</header>
+    <p class="mensaje-amor">
+      💌 <strong>Querido Agus</strong>, esperamos que tengas un día muy hermoso y lleno de alegría.  
+      🌟 Que siempre seas feliz y se cumplan todos tus sueños.  
+      🎂💫💝 Te amamos mucho.  
+      Con todo nuestro amor: <strong>Cande, Sere y Manu</strong> 💕🌈🎈💐🦋
+    </p>
 
-<nav>
-  <a href="#servicios">Servicios</a>
-  <a href="#sobre">Sobre mí</a>
-  <a href="#contacto">Contacto</a>
-</nav>
+    <!-- Imagen decorativa entre el mensaje y el botón -->
+    <img class="imagen-deco" src="A_colorful_digital_illustration_depicts_four_young.png" alt="Imagen decorativa de celebración" />
 
-<section id="servicios">
-  <h2>Servicios</h2>
-  <div class="service">
-    <h3>Estilismo Facial</h3>
-    <p>Tratamientos personalizados para resaltar tu belleza natural. Cejas, limpiezas profundas y revitalización facial.</p>
+    <div id="gift-section">
+      <button id="giftBtn">🎁 OBTENER REGALO</button>
+      <div id="giftReveal">
+        <div class="codigo">
+          <a href="https://shakacmmnty.com.ar/" target="_blank">
+            Código: FELIZCUMPLEAGUS
+          </a>
+          <div class="nota">
+            Clickea y usa este código en ... 😜<br>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="service">
-    <h3>Masajes Terapéuticos</h3>
-    <p>Relajantes, descontracturantes y faciales. Un espacio para armonizar cuerpo y mente.</p>
-  </div>
-</section>
 
-<section id="sobre">
-  <h2>Sobre mí</h2>
-  <p>Soy Sofía Bareiro, apasionada por el bienestar y la estética. Más de 10 años acompañando a personas a sentirse mejor consigo mismas, con un enfoque humano y personalizado.</p>
-</section>
+  <script>
+    const btn = document.getElementById("giftBtn");
+    const reveal = document.getElementById("giftReveal");
 
-<section id="contacto">
-  <h2>Contacto</h2>
-  <p>📍 Zona: Palermo, CABA<br>
-     📞 WhatsApp: 11 1234-5678<br>
-     📧 Email: facesof.sofia@gmail.com</p>
-
-  <button id="agendarBtn">Agendar turno</button>
-
-  <div id="formularioTurno">
-    <h3>Reservá tu turno</h3>
-    <form>
-      <input type="text" placeholder="Nombre" required>
-      <input type="tel" placeholder="Teléfono" required>
-      <input type="email" placeholder="Email" required>
-      <button type="submit" style="background-color:#e6a1b2; color:white; border:none; padding:0.7rem 1.5rem; border-radius:20px;">Enviar</button>
-    </form>
-  </div>
-</section>
-
-<footer>
-  <p>&copy; 2025 FaceSof by Sofía Bareiro. Todos los derechos reservados.</p>
-</footer>
-
-<script>
-  const btn = document.getElementById('agendarBtn');
-  const form = document.getElementById('formularioTurno');
-
-  btn.addEventListener('click', () => {
-    form.style.display = form.style.display === 'block' ? 'none' : 'block';
-  });
-</script>
-
+    btn.addEventListener("click", () => {
+      reveal.style.display = "flex";
+    });
+  </script>
 </body>
 </html>
