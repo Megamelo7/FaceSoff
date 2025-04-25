@@ -110,10 +110,12 @@
     .slide {
       width: 100%;
       flex-shrink: 0;
-      object-fit: cover;
-      height: 310px;
-      object-position: center;
-      border-radius: 8px;
+    }
+    .slide img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
     }
     .prev, .next {
       position: absolute;
@@ -161,9 +163,9 @@
   <h2 style="text-align:center;">Galería</h2>
   <div class="slider">
     <div class="slides">
-      <img src="FaceSoff_Presentacion.png" class="slide" alt="Presentación FaceSoff">
-      <img src="CuidadoPiel.png" class="slide" alt="Cuidado Piel">
-      <img src="Nico_jaja.png" class="slide" alt="Servicio 3">
+      <div class="slide"><img src="FaceSoff_Presentacion.png" alt="Presentación FaceSoff"></div>
+      <div class="slide"><img src="CuidadoPiel.png" alt="Cuidado Piel"></div>
+      <div class="slide"><img src="nico_jaja.png" alt="Servicio 3"></div>
     </div>
     <button class="prev">&#10094;</button>
     <button class="next">&#10095;</button>
