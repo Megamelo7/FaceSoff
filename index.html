@@ -48,6 +48,14 @@
       margin-bottom: 1.5rem;
       border-radius: 10px;
     }
+    footer {
+      background-color: #f7d3d3;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    /* Botón flotante */
     #agendarBtn {
       position: fixed;
       bottom: 20px;
@@ -70,11 +78,45 @@
       background-color: #b35b76;
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
     }
-    footer {
-      background-color: #f7d3d3;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
+
+    /* Slider */
+    #galeria {
+      max-width: 800px;
+      margin: 3rem auto;
+      position: relative;
+    }
+    .slider {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+    .slides {
+      display: flex;
+      width: 300%;
+      transition: transform 0.5s ease-in-out;
+    }
+    .slide {
+      width: 100%;
+      flex-shrink: 0;
+    }
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(179, 91, 118, 0.7);
+      border: none;
+      color: white;
+      font-size: 2rem;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    .prev {
+      left: 10px;
+    }
+    .next {
+      right: 10px;
     }
   </style>
 </head>
@@ -87,6 +129,7 @@
 
 <nav>
   <a href="#servicios">Servicios</a>
+  <a href="#galeria">Galería</a>
   <a href="#sobre">Nosotros</a>
   <a href="#contacto">Contacto</a>
 </nav>
@@ -100,6 +143,21 @@
   <div class="service">
     <h3>🧴 Productos FS</h3>
     <p>Belleza, cosmética y cuidado personal con formulaciones pensadas para vos. Distribución y asesoramiento personalizado.</p>
+  </div>
+</section>
+
+<section id="galeria">
+  <h2 style="text-align:center;">Galería</h2>
+  <div class="slider">
+    <div class="slides">
+      <!-- Reemplazá las URLs con tus imágenes reales -->
+      <img src="https://via.placeholder.com/800x400?text=Servicio+1" class="slide" alt="Servicio 1">
+      <img src="https://via.placeholder.com/800x400?text=Servicio+2" class="slide" alt="Servicio 2">
+      <img src="https://via.placeholder.com/800x400?text=Servicio+3" class="slide" alt="Servicio 3">
+    </div>
+    <!-- Botones -->
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
   </div>
 </section>
 
@@ -117,7 +175,7 @@
   </p>
 </section>
 
-<!-- Botón de Agendar Turno anclado al fondo -->
+<!-- Botón flotante de WhatsApp -->
 <a id="agendarBtn" href="https://wa.me/5491152577608?text=Hola%20Sof%C3%ADa%2C%20quiero%20reservar%20un%20turno%20con%20vos%20%E2%9C%A8" target="_blank">
   AGENDAR TURNO
 </a>
@@ -125,6 +183,31 @@
 <footer>
   <p>&copy; 2025 FaceSof by Sofía Bareiro. Todos los derechos reservados.</p>
 </footer>
+
+<!-- JavaScript del slider -->
+<script>
+  const slides = document.querySelector('.slides');
+  const totalSlides = document.querySelectorAll('.slide').length;
+  let index = 0;
+
+  function showSlide(i) {
+    slides.style.transform = `translateX(-${i * 100}%)`;
+  }
+
+  function nextSlide() {
+    index = (index + 1) % totalSlides;
+    showSlide(index);
+  }
+
+  function prevSlide() {
+    index = (index - 1 + totalSlides) % totalSlides;
+    showSlide(index);
+  }
+
+  document.querySelector('.next').addEventListener('click', nextSlide);
+  document.querySelector('.prev').addEventListener('click', prevSlide);
+  setInterval(nextSlide, 5000); // cambio automático cada 5 segundos
+</script>
 
 </body>
 </html>
