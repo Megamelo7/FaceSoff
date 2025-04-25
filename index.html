@@ -15,7 +15,6 @@
       background: linear-gradient(135deg, #f7d3d3, #fce9f1);
       text-align: center;
       padding: 3rem 1rem 2rem;
-      position: relative;
     }
     header h1 {
       font-size: 3rem;
@@ -25,27 +24,6 @@
     header p {
       font-size: 1.2rem;
       margin-top: 0.5rem;
-    }
-    #agendarBtn {
-      position: absolute;
-      bottom: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #e6a1b2;
-      color: white;
-      border: none;
-      padding: 1rem 2rem;
-      font-size: 1.3rem;
-      border-radius: 25px;
-      cursor: pointer;
-      text-align: center;
-      text-decoration: none;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      transition: all 0.3s ease;
-    }
-    #agendarBtn:hover {
-      background-color: #b35b76;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
     }
     nav {
       background-color: #f3c9d4;
@@ -70,6 +48,28 @@
       margin-bottom: 1.5rem;
       border-radius: 10px;
     }
+    #agendarBtn {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #e6a1b2;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.3rem;
+      border-radius: 25px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      z-index: 100;
+    }
+    #agendarBtn:hover {
+      background-color: #b35b76;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    }
     footer {
       background-color: #f7d3d3;
       text-align: center;
@@ -83,11 +83,6 @@
 <header>
   <h1>FaceSof</h1>
   <p>by Sofía Bareiro · COSMETOLOGÍA - PRODUCTOS FS</p>
-  
-  <!-- Botón Agendar Turno destacado en la parte superior -->
-  <a id="agendarBtn" href="https://wa.me/5491152577608?text=Hola%20Sof%C3%ADa%2C%20quiero%20reservar%20un%20turno%20con%20vos%20%E2%9C%A8" target="_blank">
-    Agendar turno por WhatsApp
-  </a>
 </header>
 
 <nav>
@@ -120,11 +115,12 @@
     ⏰ Lunes a Viernes de 08:00 a 19:00 y Sábados de 08:00 a 14:00<br>
     📍 Chilavert<br><br>
   </p>
-
-  <a id="agendarBtn" href="https://wa.me/5491152577608?text=Hola%20Sof%C3%ADa%2C%20quiero%20reservar%20un%20turno%20con%20vos%20%E2%9C%A8" target="_blank">
-    Agendar turno por WhatsApp
-  </a>
 </section>
+
+<!-- Botón de Agendar Turno anclado al fondo -->
+<a id="agendarBtn" href="https://wa.me/5491152577608?text=Hola%20Sof%C3%ADa%2C%20quiero%20reservar%20un%20turno%20con%20vos%20%E2%9C%A8" target="_blank">
+  AGENDAR TURNO
+</a>
 
 <footer>
   <p>&copy; 2025 FaceSof by Sofía Bareiro. Todos los derechos reservados.</p>
