@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FaceSof by Sofía Bareiro</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -13,17 +14,32 @@
     }
     header {
       background: linear-gradient(135deg, #f7d3d3, #fce9f1);
-      text-align: center;
-      padding: 3rem 1rem 2rem;
+      padding: 2rem 1rem;
     }
-    header h1 {
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .header-text h1 {
       font-size: 3rem;
       margin: 0;
       color: #b35b76;
     }
-    header p {
+    .header-text p {
       font-size: 1.2rem;
       margin-top: 0.5rem;
+    }
+    .header-icon a {
+      font-size: 2rem;
+      color: #b35b76;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .header-icon a:hover {
+      color: #81374c;
     }
     nav {
       background-color: #f3c9d4;
@@ -122,18 +138,42 @@
 </head>
 <body>
 
+<!-- ENCABEZADO -->
 <header>
-  <h1>FaceSof</h1>
-  <p>by Sofía Bareiro · COSMETOLOGÍA - PRODUCTOS FS</p>
+  <div class="header-container">
+    <div class="header-text">
+      <h1>FaceSof</h1>
+      <p>by Sofía Bareiro · COSMETOLOGÍA - PRODUCTOS FS</p>
+    </div>
+    <div class="header-icon">
+      <a href="https://www.instagram.com/face.soff/" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
 </header>
 
+<!-- NAVEGACIÓN -->
 <nav>
-  <a href="#servicios">Servicios</a>
   <a href="#galeria">Galería</a>
+  <a href="#servicios">Servicios</a>
   <a href="#sobre">Nosotros</a>
   <a href="#contacto">Contacto</a>
 </nav>
 
+<!-- GALERÍA -->
+<section id="galeria">
+  <h2 style="text-align:center;">Galería</h2>
+  <div class="slider">
+    <div class="slides">
+      <img src="https://via.placeholder.com/800x400?text=Servicio+1" class="slide" alt="Servicio 1">
+      <img src="https://via.placeholder.com/800x400?text=Servicio+2" class="slide" alt="Servicio 2">
+      <img src="https://via.placeholder.com/800x400?text=Servicio+3" class="slide" alt="Servicio 3">
+    </div>
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
 <section id="servicios">
   <h2>Servicios</h2>
   <div class="service">
@@ -146,26 +186,13 @@
   </div>
 </section>
 
-<section id="galeria">
-  <h2 style="text-align:center;">Galería</h2>
-  <div class="slider">
-    <div class="slides">
-      <!-- Reemplazá las URLs con tus imágenes reales -->
-      <img src="https://via.placeholder.com/800x400?text=Servicio+1" class="slide" alt="Servicio 1">
-      <img src="https://via.placeholder.com/800x400?text=Servicio+2" class="slide" alt="Servicio 2">
-      <img src="https://via.placeholder.com/800x400?text=Servicio+3" class="slide" alt="Servicio 3">
-    </div>
-    <!-- Botones -->
-    <button class="prev">&#10094;</button>
-    <button class="next">&#10095;</button>
-  </div>
-</section>
-
+<!-- SOBRE -->
 <section id="sobre">
   <h2>Sobre FaceSof</h2>
   <p>Somos un espacio dedicado a la belleza y el cuidado personal. Combinamos servicios de cosmetología profesional con productos pensados para cuidar tu piel todos los días.</p>
 </section>
 
+<!-- CONTACTO -->
 <section id="contacto">
   <h2>Contacto</h2>
   <p>
@@ -175,16 +202,17 @@
   </p>
 </section>
 
-<!-- Botón flotante de WhatsApp -->
+<!-- BOTÓN WHATSAPP -->
 <a id="agendarBtn" href="https://wa.me/5491152577608?text=Hola%20Sof%C3%ADa%2C%20quiero%20reservar%20un%20turno%20con%20vos%20%E2%9C%A8" target="_blank">
   AGENDAR TURNO
 </a>
 
+<!-- FOOTER -->
 <footer>
   <p>&copy; 2025 FaceSof by Sofía Bareiro. Todos los derechos reservados.</p>
 </footer>
 
-<!-- JavaScript del slider -->
+<!-- SLIDER JS -->
 <script>
   const slides = document.querySelector('.slides');
   const totalSlides = document.querySelectorAll('.slide').length;
@@ -206,7 +234,7 @@
 
   document.querySelector('.next').addEventListener('click', nextSlide);
   document.querySelector('.prev').addEventListener('click', prevSlide);
-  setInterval(nextSlide, 5000); // cambio automático cada 5 segundos
+  setInterval(nextSlide, 5000);
 </script>
 
 </body>
