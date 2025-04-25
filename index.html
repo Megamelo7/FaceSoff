@@ -71,7 +71,6 @@
       margin-top: 2rem;
     }
 
-    /* Botón flotante */
     #agendarBtn {
       position: fixed;
       bottom: 20px;
@@ -95,15 +94,12 @@
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
     }
 
-    /* Slider */
-    #galeria {
-      max-width: 800px;
-      margin: 3rem auto;
-      position: relative;
-    }
     .slider {
       position: relative;
+      width: 100%;
+      max-width: 800px;
       overflow: hidden;
+      margin: 0 auto;
       border-radius: 10px;
     }
     .slides {
@@ -112,11 +108,11 @@
       transition: transform 0.5s ease-in-out;
     }
     .slide {
-      width: 408px;
-      height: 310px;
-      object-fit: cover;
-      object-position: center;
+      width: 100%;
       flex-shrink: 0;
+      object-fit: cover;
+      height: 310px;
+      object-position: center;
       border-radius: 8px;
     }
     .prev, .next {
@@ -142,7 +138,6 @@
 </head>
 <body>
 
-<!-- ENCABEZADO -->
 <header>
   <div class="header-container">
     <div class="header-text">
@@ -155,7 +150,6 @@
   </div>
 </header>
 
-<!-- NAVEGACIÓN -->
 <nav>
   <a href="#galeria">Galería</a>
   <a href="#servicios">Servicios</a>
@@ -163,7 +157,6 @@
   <a href="#contacto">Contacto</a>
 </nav>
 
-<!-- GALERÍA -->
 <section id="galeria">
   <h2 style="text-align:center;">Galería</h2>
   <div class="slider">
@@ -177,7 +170,6 @@
   </div>
 </section>
 
-<!-- SERVICIOS -->
 <section id="servicios">
   <h2>Servicios</h2>
   <div class="service">
@@ -190,13 +182,11 @@
   </div>
 </section>
 
-<!-- SOBRE -->
 <section id="sobre">
   <h2>Sobre FaceSoff</h2>
   <p>Somos un espacio dedicado a la belleza y el cuidado personal. Combinamos servicios de cosmetología profesional con productos pensados para cuidar tu piel todos los días.</p>
 </section>
 
-<!-- CONTACTO -->
 <section id="contacto">
   <h2>Contacto</h2>
   <p>
@@ -206,17 +196,14 @@
   </p>
 </section>
 
-<!-- BOTÓN WHATSAPP -->
-<a id="agendarBtn" href="https://wa.me/5491155943200?text=Hola%20Sof%C3%ADa%2C%20quiero%20reservar%20un%20turno%20con%20vos%20%E2%9C%A8" target="_blank">
+<a id="agendarBtn" href="https://wa.me/5491152577608?text=Hola%20Sof%C3%ADa%2C%20quiero%20reservar%20un%20turno%20con%20vos%20%E2%9C%A8" target="_blank">
   AGENDAR TURNO
 </a>
 
-<!-- FOOTER -->
 <footer>
   <p>&copy; 2025 FaceSoff by Sofía Bareiro. Todos los derechos reservados.</p>
 </footer>
 
-<!-- SLIDER JS -->
 <script>
   const slides = document.querySelector('.slides');
   const totalSlides = document.querySelectorAll('.slide').length;
