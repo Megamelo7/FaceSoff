@@ -76,6 +76,20 @@
       padding: 1rem;
     }
 
+    /* Imagen fija de presentación */
+    .imagen-presentacion {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .imagen-presentacion img {
+      width: 408px;
+      height: 310px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
     /* Caja para cada servicio */
     .service {
       background-color: #fdf1f4;
@@ -117,57 +131,6 @@
       background-color: #b35b76;
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
     }
-
-    /* Slider de imágenes */
-    .slider {
-      position: relative;
-      width: 100%;
-      max-width: 800px;
-      overflow: hidden;
-      margin: 0 auto;
-      border-radius: 10px;
-    }
-
-    .slides {
-      display: flex;
-      width: 300%;
-      transition: transform 0.5s ease-in-out;
-    }
-
-    .slide {
-      width: 100%;
-      flex-shrink: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #fff8f5;
-    }
-
-    /* Estilo de cada imagen del slider */
-    .slide img {
-      width: 408px;
-      height: 310px;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* Botones de navegación del slider */
-    .prev, .next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(179, 91, 118, 0.7);
-      border: none;
-      color: white;
-      font-size: 2rem;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      border-radius: 50%;
-      z-index: 1;
-    }
-
-    .prev { left: 10px; }
-    .next { right: 10px; }
   </style>
 </head>
 
@@ -189,23 +152,17 @@
 
   <!-- Menú de navegación -->
   <nav>
-    <a href="#galeria">Galería</a>
+    <a href="#galeria">Presentación</a>
     <a href="#servicios">Servicios</a>
     <a href="#sobre">Nosotros</a>
     <a href="#contacto">Contacto</a>
   </nav>
 
-  <!-- Sección de galería con slider de imágenes -->
+  <!-- Sección de imagen fija de presentación -->
   <section id="galeria">
-    <h2 style="text-align:center;">Galería</h2>
-    <div class="slider">
-      <div class="slides">
-        <!-- Cada slide contiene una imagen -->
-        <div class="slide"><img src="FaceSoff_Presentacion.png" alt="Presentación FaceSoff"></div>
-      </div>
-      <!-- Botones para cambiar de slide -->
-      <button class="prev">&#10094;</button>
-      <button class="next">&#10095;</button>
+    <h2 style="text-align:center;">Presentación</h2>
+    <div class="imagen-presentacion">
+      <img src="FaceSoff_Presentacion.png" alt="Presentación FaceSoff" />
     </div>
   </section>
 
@@ -232,7 +189,6 @@
   <section id="contacto">
     <h2>Contacto</h2>
     <p>
-      ✨ Servicios cosmetológicos<br>
       ⏰ Lunes a Viernes de 08:00 a 19:00 y Sábados de 08:00 a 14:00<br>
       📍 Chilavert<br><br>
     </p>
@@ -247,37 +203,6 @@
   <footer>
     <p>&copy; 2025 FaceSoff by Sofía Bareiro. Todos los derechos reservados.</p>
   </footer>
-
-  <!-- Script para manejar el slider de imágenes -->
-  <script>
-    const slides = document.querySelector('.slides');
-    const totalSlides = document.querySelectorAll('.slide').length;
-    let index = 0;
-
-    // Función para mostrar una slide específica
-    function showSlide(i) {
-      slides.style.transform = `translateX(-${i * 100}%)`;
-    }
-
-    // Avanza a la siguiente imagen
-    function moveToNextSlide() {
-      index = (index + 1) % totalSlides;
-      showSlide(index);
-    }
-
-    // Retrocede a la imagen anterior
-    function moveToPrevSlide() {
-      index = (index - 1 + totalSlides) % totalSlides;
-      showSlide(index);
-    }
-
-    // Eventos para los botones de navegación
-    document.querySelector('.next').addEventListener('click', moveToNextSlide);
-    document.querySelector('.prev').addEventListener('click', moveToPrevSlide);
-
-    // Cambio automático de slide cada 5 segundos
-    setInterval(moveToNextSlide, 5000);
-  </script>
 
 </body>
 </html>
