@@ -58,31 +58,8 @@
       font-size: 1.1rem;
       border-radius: 25px;
       cursor: pointer;
-    }
-    #formularioTurno {
-      display: none;
-      background-color: #fff;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      max-width: 400px;
-      margin: 1rem auto;
-    }
-    input {
-      width: 100%;
-      padding: 0.8rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
-    button[type="submit"] {
-      background-color: #e6a1b2;
-      color: white;
-      border: none;
-      padding: 0.7rem 1.5rem;
-      border-radius: 20px;
-      font-size: 1rem;
-      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
     }
     footer {
       background-color: #f7d3d3;
@@ -125,53 +102,16 @@
 <section id="contacto">
   <h2>Contacto</h2>
   <p>📍 Zona: Palermo, CABA<br>
-     📞 WhatsApp: 11 1234-5678<br>
      📧 Email: facesof.sofia@gmail.com</p>
 
-  <button id="agendarBtn">Agendar turno</button>
-
-  <div id="formularioTurno">
-    <h3>Reservá tu turno</h3>
-    <form id="turnoForm">
-      <input type="text" id="nombre" placeholder="Tu nombre" required>
-      <input type="tel" id="telefono" placeholder="Tu teléfono" required>
-      <input type="email" id="email" placeholder="Tu email" required>
-      <button type="submit">Enviar por WhatsApp</button>
-    </form>
-  </div>
+  <a id="agendarBtn" href="https://wa.me/5491152577608?text=Hola%20Sof%C3%ADa%2C%20quiero%20reservar%20un%20turno%20con%20vos%20%E2%9C%A8" target="_blank">
+    Agendar turno por WhatsApp
+  </a>
 </section>
 
 <footer>
   <p>&copy; 2025 FaceSof by Sofía Bareiro. Todos los derechos reservados.</p>
 </footer>
-
-<script>
-  const btn = document.getElementById('agendarBtn');
-  const formContainer = document.getElementById('formularioTurno');
-  const form = document.getElementById('turnoForm');
-
-  btn.addEventListener('click', () => {
-    formContainer.style.display = formContainer.style.display === 'block' ? 'none' : 'block';
-  });
-
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const nombre = document.getElementById('nombre').value;
-    const telefono = document.getElementById('telefono').value;
-    const email = document.getElementById('email').value;
-
-    const mensaje = `Hola Sofía! Me gustaría agendar un turno. 
-Nombre: ${nombre}
-Teléfono: ${telefono}
-Email: ${email}`;
-
-    const numeroWhatsApp = "5491123456789"; // ← Reemplazá con tu número real
-    const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
-
-    window.open(url, '_blank');
-  });
-</script>
 
 </body>
 </html>
