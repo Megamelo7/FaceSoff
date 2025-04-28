@@ -77,9 +77,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      position: relative;
-      overflow: hidden;
-      height: 300px;
     }
 
     .imagen-presentacion img {
@@ -87,17 +84,10 @@
       height: 280px;
       object-fit: cover;
       border-radius: 10px;
-      position: absolute;
-      transition: opacity 1s ease-in-out;
-      opacity: 0;
     }
 
-    .imagen-presentacion img.active {
-      opacity: 1;
-    }
-
-    /* Servicios y Sobre */
-    .service, .sobre {
+    /* Servicios */
+    .service {
       background-color: #fdf1f4;
       border-left: 5px solid #e6a1b2;
       padding: 1rem;
@@ -220,19 +210,17 @@
     <a href="#contacto">Contacto</a>
   </nav>
 
-  <!-- Imagen de Presentación con Carrusel -->
+  <!-- Imagen de Presentación -->
   <section id="presentacion">
     <div class="imagen-presentacion">
-      <img class="active" src="40a85acf-8677-437d-a03c-c9ae972a1782.png" alt="Presentación FaceSoff" />
+      <img src="FaceSoff_Presentacion.png" alt="Presentación FaceSoff" />
     </div>
   </section>
 
-  <!-- Sobre FaceSoff -->
+  <!-- Sobre Nosotros -->
   <section id="sobre">
-    <div class="sobre">
-      <h3>Sobre FaceSoff</h3>
-      <p>Somos un espacio dedicado a la belleza y el cuidado personal. Combinamos servicios de cosmetología profesional con productos pensados para cuidar tu piel todos los días.</p>
-    </div>
+    <h2 style="text-align: center;">Sobre FaceSoff</h2>
+    <p>Somos un espacio dedicado a la belleza y el cuidado personal. Combinamos servicios de cosmetología profesional con productos pensados para cuidar tu piel todos los días.</p>
   </section>
 
   <!-- Galería de Imágenes -->
@@ -254,7 +242,7 @@
 
   <!-- Servicios -->
   <section id="servicios">
-    <h2>Servicios</h2>
+    <h2 style="text-align: center;">Servicios</h2>
     <div class="service">
       <h3>✨ Servicios Cosmetológicos</h3>
       <p>Tratamientos para el cuidado estético y bienestar facial, con productos seleccionados de alta calidad y aparatología para profundizar tu tratamiento.</p>
@@ -269,7 +257,7 @@
 
   <!-- Contacto -->
   <section id="contacto">
-    <h2>Contacto</h2>
+    <h2 style="text-align: center;">Contacto</h2>
     <p>
       ⏰ Lunes a Viernes de 08:00 a 19:00 y Sábados de 08:00 a 14:00<br>
       📍 Chilavert<br><br>
@@ -286,7 +274,7 @@
     <p>&copy; 2025 FaceSoff by Sofía Bareiro. Todos los derechos reservados.</p>
   </footer>
 
-  <!-- Scripts -->
+  <!-- Script Modal -->
   <script>
     function abrirModal(src) {
       document.getElementById("modal").style.display = "block";
@@ -299,16 +287,6 @@
       event.stopPropagation();
       cerrarModal();
     };
-
-    // Carrusel automático
-    const imagenes = document.querySelectorAll('.imagen-presentacion img');
-    let index = 0;
-
-    setInterval(() => {
-      imagenes[index].classList.remove('active');
-      index = (index + 1) % imagenes.length;
-      imagenes[index].classList.add('active');
-    }, 5000);
   </script>
 
 </body>
