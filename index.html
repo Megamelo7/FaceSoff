@@ -5,109 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FaceSoff by Sofía Bareiro</title>
 
-  <!-- Íconos de Font Awesome para redes sociales -->
+  <!-- Íconos de Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-  <!-- Estilos CSS internos -->
   <style>
-    /* Estilos generales del cuerpo */
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
       background: #fff8f5;
       color: #5a4a42;
     }
-
-    /* Encabezado con fondo degradado */
-    header {
-      background: linear-gradient(135deg, #f7d3d3, #fce9f1);
-      padding: 2rem 1rem;
-    }
-
-    /* Contenedor del encabezado con título y redes */
-    .header-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .header-text h1 {
-      font-size: 3rem;
-      margin: 0;
-      color: #b35b76;
-    }
-
-    .header-text p {
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
-    }
-
-    .header-icon a {
-      font-size: 2rem;
-      color: #b35b76;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .header-icon a:hover {
-      color: #81374c;
-    }
-
-    /* Barra de navegación principal */
-    nav {
-      background-color: #f3c9d4;
-      padding: 0.5rem;
-      text-align: center;
-    }
-
-    nav a {
-      margin: 0 1rem;
-      text-decoration: none;
-      color: #81374c;
-      font-weight: bold;
-    }
-
-    /* Estilo general para secciones */
-    section {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1rem;
-    }
-
-    /* Imagen fija de presentación */
-    .imagen-presentacion {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
+    header { background: linear-gradient(135deg, #f7d3d3, #fce9f1); padding: 2rem 1rem; }
+    .header-container { display: flex; justify-content: space-between; align-items: center; max-width: 1000px; margin: 0 auto; }
+    .header-text h1 { font-size: 3rem; margin: 0; color: #b35b76; }
+    .header-text p { font-size: 1.2rem; margin-top: 0.5rem; }
+    .header-icon a { font-size: 2rem; color: #b35b76; text-decoration: none; transition: color 0.3s ease; }
+    .header-icon a:hover { color: #81374c; }
+    nav { background-color: #f3c9d4; padding: 0.5rem; text-align: center; }
+    nav a { margin: 0 1rem; text-decoration: none; color: #81374c; font-weight: bold; }
+    section { max-width: 800px; margin: 2rem auto; padding: 1rem; }
     .imagen-presentacion img {
-      width: 350px;
-      height: 280px;
+      max-width: 720px;
+      max-height: 1280px;
+      width: 100%;
+      height: auto;
       object-fit: cover;
       border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
     }
-
-    /* Caja para cada servicio */
-    .service {
-      background-color: #fdf1f4;
-      border-left: 5px solid #e6a1b2;
-      padding: 1rem;
-      margin-bottom: 1.5rem;
-      border-radius: 10px;
-    }
-
-    /* Pie de página */
-    footer {
-      background-color: #f7d3d3;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-
-    /* Botón flotante para agendar turno por WhatsApp */
+    .service { background-color: #fdf1f4; border-left: 5px solid #e6a1b2; padding: 1rem; margin-bottom: 1.5rem; border-radius: 10px; }
+    footer { background-color: #f7d3d3; text-align: center; padding: 1rem; margin-top: 2rem; }
     #agendarBtn {
       position: fixed;
       bottom: 20px;
@@ -120,91 +48,133 @@
       font-size: 1.3rem;
       border-radius: 25px;
       cursor: pointer;
-      text-align: center;
       text-decoration: none;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
       transition: all 0.3s ease;
       z-index: 100;
     }
+    #agendarBtn:hover { background-color: #b35b76; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
 
-    #agendarBtn:hover {
-      background-color: #b35b76;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    /* Estilos para el Modal de Zoom */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 200;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+    }
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 90%;
+    }
+    .modal-content:hover {
+      transform: scale(1.05);
+      transition: transform 0.5s;
+    }
+    .close {
+      position: absolute;
+      top: 30px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Encabezado del sitio -->
-  <header>
-    <div class="header-container">
-      <div class="header-text">
-        <h1>FaceSoff</h1>
-        <p>by Sofía Bareiro · COSMETOLOGÍA - PRODUCTOS FS</p>
-      </div>
-      <div class="header-icon">
-        <!-- Enlace a Instagram -->
-        <a href="https://www.instagram.com/face.soff/" target="_blank"><i class="fab fa-instagram"></i></a>
-      </div>
+<header>
+  <div class="header-container">
+    <div class="header-text">
+      <h1>FaceSoff</h1>
+      <p>by Sofía Bareiro · COSMETOLOGÍA - PRODUCTOS FS</p>
     </div>
-  </header>
-
-  <!-- Menú de navegación -->
-  <nav>
-    <a href="#galeria">Presentación</a>
-    <a href="#servicios">Servicios</a>
-    <a href="#sobre">Nosotros</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
-
-  <!-- Sección de imagen fija de presentación -->
-  <section id="galeria">
-    <h2 style="text-align:center;/h2>
-    <div class="imagen-presentacion">
-      <img src="FaceSoff_Presentacion.png" alt="Presentación FaceSoff" />
+    <div class="header-icon">
+      <a href="https://www.instagram.com/face.soff/" target="_blank"><i class="fab fa-instagram"></i></a>
     </div>
-  </section>
+  </div>
+</header>
 
-  <!-- Sección de servicios -->
-  <section id="servicios">
-    <h2>Servicios</h2>
-    <div class="service">
-      <h3>✨ Servicios Cosmetológicos</h3>
-      <p>Tratamientos para el cuidado estético y bienestar facial, con productos seleccionados de alta calidad y aparatología para profundizar tu tratamiento.</p>
-      <p2>Limpieza profunda de cutis - Punta de diamante - Alta frecuencia - Dermapen - Dermaplaning</p2>
-    </div>
-    <div class="service">
-      <h3>🧴 Productos FS</h3>
-      <p>Belleza, cosmética y cuidado personal con activos pensadas para vos. Distribución y asesoramiento personalizado.</p>
-      <p2>Marcas como LIDHERMA - IDRAET - EXEL - ICONO y mas</p2>
-    </div>
-  </section>
+<nav>
+  <a href="#galeria">Presentación</a>
+  <a href="#servicios">Servicios</a>
+  <a href="#sobre">Nosotros</a>
+  <a href="#contacto">Contacto</a>
+</nav>
 
-  <!-- Sección sobre nosotros -->
-  <section id="sobre">
-    <h2>Sobre FaceSoff</h2>
-    <p>Somos un espacio dedicado a la belleza y el cuidado personal. Combinamos servicios de cosmetología profesional con productos pensados para cuidar tu piel todos los días.</p>
-  </section>
+<section id="galeria">
+  <h2 style="text-align:center;">Galería</h2>
+  <div class="imagen-presentacion">
+    <img id="img1" src="FaceSoff_Presentacion.png" alt="Presentación FaceSoff" />
+  </div>
+</section>
 
-  <!-- Sección de contacto -->
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <p>
-      ⏰ Lunes a Viernes de 08:00 a 19:00 y Sábados de 08:00 a 14:00<br>
-      📍 Chilavert<br><br>
-    </p>
-  </section>
+<section id="servicios">
+  <h2>Servicios</h2>
+  <div class="service">
+    <h3>✨ Servicios Cosmetológicos</h3>
+    <p>Tratamientos para el cuidado estético y bienestar facial.</p>
+    <p>Limpieza profunda de cutis - Punta de diamante - Alta frecuencia - Dermapen - Dermaplaning</p>
+  </div>
+  <div class="service">
+    <h3>🧴 Productos FS</h3>
+    <p>Belleza, cosmética y cuidado personal.</p>
+    <p>Marcas como LIDHERMA - IDRAET - EXEL - ICONO y más.</p>
+  </div>
+</section>
 
-  <!-- Botón flotante de WhatsApp para agendar turno -->
-  <a id="agendarBtn" href="https://wa.me/5491155943200?text=Hola%20Sof%C3%ADa%2C%20quiero%20reservar%20un%20turno%20con%20vos%20%E2%9C%A8" target="_blank">
-    AGENDAR TURNO
-  </a>
+<section id="sobre">
+  <h2>Sobre FaceSoff</h2>
+  <p>Somos un espacio dedicado a la belleza y el cuidado personal.</p>
+</section>
 
-  <!-- Pie de página -->
-  <footer>
-    <p>&copy; 2025 FaceSoff by Sofía Bareiro. Todos los derechos reservados.</p>
-  </footer>
+<section id="contacto">
+  <h2>Contacto</h2>
+  <p>
+    ⏰ Lunes a Viernes de 08:00 a 19:00 y Sábados de 08:00 a 14:00<br>
+    📍 Chilavert
+  </p>
+</section>
+
+<!-- Modal para Zoom -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="imgModal">
+</div>
+
+<a id="agendarBtn" href="https://wa.me/5491155943200?text=Hola%20Sof%C3%ADa%2C%20quiero%20reservar%20un%20turno%20con%20vos%20%E2%9C%A8" target="_blank">
+  AGENDAR TURNO
+</a>
+
+<footer>
+  <p>&copy; 2025 FaceSoff by Sofía Bareiro. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+  // Zoom en imágenes
+  var modal = document.getElementById("myModal");
+  var img = document.getElementById("img1");
+  var modalImg = document.getElementById("imgModal");
+  var span = document.getElementsByClassName("close")[0];
+
+  img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+  }
+
+  span.onclick = function() { 
+    modal.style.display = "none";
+  }
+</script>
 
 </body>
 </html>
