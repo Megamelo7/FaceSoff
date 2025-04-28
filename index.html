@@ -5,8 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FaceSoff by Sofía Bareiro</title>
 
+  <!-- Font Awesome para íconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
+  <!-- Estilos CSS -->
   <style>
     /* General */
     body {
@@ -70,12 +72,14 @@
       padding: 1rem;
     }
 
-    /* Imagen de presentación (carrusel) */
+    /* Imagen de presentación */
     .imagen-presentacion {
       display: flex;
       justify-content: center;
       align-items: center;
       position: relative;
+      overflow: hidden;
+      height: 300px;
     }
 
     .imagen-presentacion img {
@@ -83,7 +87,13 @@
       height: 280px;
       object-fit: cover;
       border-radius: 10px;
-      transition: opacity 1s ease;
+      position: absolute;
+      transition: opacity 1s ease-in-out;
+      opacity: 0;
+    }
+
+    .imagen-presentacion img.active {
+      opacity: 1;
     }
 
     /* Servicios y Sobre */
@@ -93,10 +103,6 @@
       padding: 1rem;
       margin-bottom: 1.5rem;
       border-radius: 10px;
-    }
-
-    .service h3, .sobre h3 {
-      margin-top: 0;
     }
 
     /* Galería */
@@ -214,13 +220,16 @@
     <a href="#contacto">Contacto</a>
   </nav>
 
-  <!-- Imagen de Presentación + Sobre -->
+  <!-- Imagen de Presentación con Carrusel -->
   <section id="presentacion">
     <div class="imagen-presentacion">
-      <img id="imagenCarrusel" src="FaceSoff_Presentacion1.png" alt="Presentación FaceSoff" />
+      <img class="active" src="40a85acf-8677-437d-a03c-c9ae972a1782.png" alt="Presentación FaceSoff" />
     </div>
+  </section>
 
-    <div id="sobre" class="sobre">
+  <!-- Sobre FaceSoff -->
+  <section id="sobre">
+    <div class="sobre">
       <h3>Sobre FaceSoff</h3>
       <p>Somos un espacio dedicado a la belleza y el cuidado personal. Combinamos servicios de cosmetología profesional con productos pensados para cuidar tu piel todos los días.</p>
     </div>
@@ -277,7 +286,7 @@
     <p>&copy; 2025 FaceSoff by Sofía Bareiro. Todos los derechos reservados.</p>
   </footer>
 
-  <!-- Script Modal + Carrusel -->
+  <!-- Scripts -->
   <script>
     function abrirModal(src) {
       document.getElementById("modal").style.display = "block";
@@ -291,19 +300,15 @@
       cerrarModal();
     };
 
-    // Carrusel de presentación
-    const imagenesCarrusel = [
-      "FaceSoff_Presentacion1.png",
-      "FaceSoff_Presentacion2.png",
-      "FaceSoff_Presentacion3.png"
-    ];
+    // Carrusel automático
+    const imagenes = document.querySelectorAll('.imagen-presentacion img');
     let index = 0;
-    const imagen = document.getElementById("imagenCarrusel");
 
     setInterval(() => {
-      index = (index + 1) % imagenesCarrusel.length;
-      imagen.src = imagenesCarrusel[index];
-    }, 5000); // cada 5 segundos
+      imagenes[index].classList.remove('active');
+      index = (index + 1) % imagenes.length;
+      imagenes[index].classList.add('active');
+    }, 5000);
   </script>
 
 </body>
