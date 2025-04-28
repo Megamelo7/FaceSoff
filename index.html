@@ -5,10 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FaceSoff by Sofía Bareiro</title>
 
-  <!-- Font Awesome para íconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-  <!-- Estilos CSS -->
   <style>
     /* General */
     body {
@@ -72,11 +70,12 @@
       padding: 1rem;
     }
 
-    /* Imagen de presentación */
+    /* Imagen de presentación (carrusel) */
     .imagen-presentacion {
       display: flex;
       justify-content: center;
       align-items: center;
+      position: relative;
     }
 
     .imagen-presentacion img {
@@ -84,15 +83,20 @@
       height: 280px;
       object-fit: cover;
       border-radius: 10px;
+      transition: opacity 1s ease;
     }
 
-    /* Servicios */
-    .service {
+    /* Servicios y Sobre */
+    .service, .sobre {
       background-color: #fdf1f4;
       border-left: 5px solid #e6a1b2;
       padding: 1rem;
       margin-bottom: 1.5rem;
       border-radius: 10px;
+    }
+
+    .service h3, .sobre h3 {
+      margin-top: 0;
     }
 
     /* Galería */
@@ -210,11 +214,15 @@
     <a href="#contacto">Contacto</a>
   </nav>
 
-  <!-- Imagen de Presentación -->
+  <!-- Imagen de Presentación + Sobre -->
   <section id="presentacion">
-    <h2 style="text-align: center;">Presentación</h2>
     <div class="imagen-presentacion">
-      <img src="FaceSoff_Presentacion.png" alt="Presentación FaceSoff" />
+      <img id="imagenCarrusel" src="FaceSoff_Presentacion1.png" alt="Presentación FaceSoff" />
+    </div>
+
+    <div id="sobre" class="sobre">
+      <h3>Sobre FaceSoff</h3>
+      <p>Somos un espacio dedicado a la belleza y el cuidado personal. Combinamos servicios de cosmetología profesional con productos pensados para cuidar tu piel todos los días.</p>
     </div>
   </section>
 
@@ -250,12 +258,6 @@
     </div>
   </section>
 
-  <!-- Sobre Nosotros -->
-  <section id="sobre">
-    <h2>Sobre FaceSoff</h2>
-    <p>Somos un espacio dedicado a la belleza y el cuidado personal. Combinamos servicios de cosmetología profesional con productos pensados para cuidar tu piel todos los días.</p>
-  </section>
-
   <!-- Contacto -->
   <section id="contacto">
     <h2>Contacto</h2>
@@ -275,7 +277,7 @@
     <p>&copy; 2025 FaceSoff by Sofía Bareiro. Todos los derechos reservados.</p>
   </footer>
 
-  <!-- Script Modal -->
+  <!-- Script Modal + Carrusel -->
   <script>
     function abrirModal(src) {
       document.getElementById("modal").style.display = "block";
@@ -288,6 +290,20 @@
       event.stopPropagation();
       cerrarModal();
     };
+
+    // Carrusel de presentación
+    const imagenesCarrusel = [
+      "FaceSoff_Presentacion1.png",
+      "FaceSoff_Presentacion2.png",
+      "FaceSoff_Presentacion3.png"
+    ];
+    let index = 0;
+    const imagen = document.getElementById("imagenCarrusel");
+
+    setInterval(() => {
+      index = (index + 1) % imagenesCarrusel.length;
+      imagen.src = imagenesCarrusel[index];
+    }, 5000); // cada 5 segundos
   </script>
 
 </body>
