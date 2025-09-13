@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -31,15 +31,27 @@
       margin: 0 auto;
     }
 
-    .header-text h1 {
+    /* Título primaveral */
+    .titulo-primaveral {
       font-size: 3rem;
       margin: 0;
-      color: #b35b76;
+      font-weight: bold;
+      text-shadow: 2px 2px 5px rgba(243, 194, 214, 0.8);
+      background: linear-gradient(90deg, #ffafbd, #ffc3a0, #d4fc79, #96e6a1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: coloresPrimavera 6s infinite alternate;
+    }
+
+    @keyframes coloresPrimavera {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
     }
 
     .header-text p {
       font-size: 1.2rem;
       margin-top: 0.5rem;
+      color: #81374c;
     }
 
     .header-icon a {
@@ -95,7 +107,7 @@
       border-radius: 10px;
     }
 
-    /* Sección "Sobre FaceSoff" con el estilo de "Servicios" */
+    /* Sección "Sobre FaceSoff" con estilo */
     #sobre {
       background-color: #fdf1f4;
       border-left: 5px solid #e6a1b2;
@@ -106,21 +118,21 @@
     }
 
     #sobre h2 {
-      font-size: 1.5rem;  /* Ajustado al tamaño de "Servicios Cosmetológicos" */
-      color: #b35b76;  /* Mismo color */
+      font-size: 1.5rem;
+      color: #b35b76;
       margin-bottom: 0.5rem;
       display: flex;
       align-items: center;
     }
 
     #sobre p {
-      font-size: 1rem; /* Reducido el tamaño de la letra */
+      font-size: 1rem;
       color: #5a4a42;
       margin-bottom: 1rem;
     }
 
     #sobre .icono-pregunta {
-      margin-right: 10px; /* Alineado a la izquierda del texto */
+      margin-right: 10px;
       color: #b35b76;
       font-size: 1.5rem;
     }
@@ -223,7 +235,7 @@
   <header>
     <div class="header-container">
       <div class="header-text">
-        <h1>FaceSoff</h1>
+        <h1 class="titulo-primaveral">🌸 FaceSoff 🌼</h1>
         <p>by Sofía Bareiro · COSMETOLOGÍA - PRODUCTOS FS</p>
       </div>
       <div class="header-icon">
