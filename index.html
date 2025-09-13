@@ -21,26 +21,33 @@
     header {
       background: linear-gradient(135deg, #f7d3d3, #fce9f1);
       padding: 2rem 1rem;
+      text-align: center;
     }
 
     .header-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       max-width: 1000px;
       margin: 0 auto;
     }
 
-    /* Título primaveral */
+    /* Título principal */
     .titulo-primaveral {
       font-size: 3rem;
       margin: 0;
       font-weight: bold;
-      text-shadow: 2px 2px 5px rgba(243, 194, 214, 0.8);
-      background: linear-gradient(90deg, #ffafbd, #ffc3a0, #d4fc79, #96e6a1);
+      color: #d65c8a;
+      text-shadow: 2px 2px 6px rgba(255, 182, 193, 0.8);
+    }
+
+    /* Subtítulo animado */
+    .subtitulo-primaveral {
+      font-size: 1.8rem;
+      margin: 0.5rem 0 1rem 0;
+      font-weight: bold;
+      background: linear-gradient(90deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c0fe, #f6d365, #96e6a1);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       animation: coloresPrimavera 6s infinite alternate;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.1);
     }
 
     @keyframes coloresPrimavera {
@@ -52,6 +59,10 @@
       font-size: 1.2rem;
       margin-top: 0.5rem;
       color: #81374c;
+    }
+
+    .header-icon {
+      margin-top: 1rem;
     }
 
     .header-icon a {
@@ -107,7 +118,7 @@
       border-radius: 10px;
     }
 
-    /* Sección "Sobre FaceSoff" con estilo */
+    /* Sobre FaceSoff */
     #sobre {
       background-color: #fdf1f4;
       border-left: 5px solid #e6a1b2;
@@ -195,7 +206,7 @@
       cursor: pointer;
     }
 
-    /* Botón flotante WhatsApp */
+    /* Botón WhatsApp */
     #agendarBtn {
       position: fixed;
       bottom: 20px;
@@ -236,6 +247,7 @@
     <div class="header-container">
       <div class="header-text">
         <h1 class="titulo-primaveral">🌸 FaceSoff 🌼</h1>
+        <h2 class="subtitulo-primaveral">✨ ¡Feliz Primavera! ✨</h2>
         <p>by Sofía Bareiro · COSMETOLOGÍA - PRODUCTOS FS</p>
       </div>
       <div class="header-icon">
@@ -265,7 +277,7 @@
     <p>Somos un espacio dedicado a la belleza y el cuidado personal. Combinamos servicios de cosmetología profesional con productos pensados para cuidar tu piel todos los días.</p>
   </section>
 
-  <!-- Galería de Imágenes -->
+  <!-- Galería -->
   <section id="galeria">
     <h2 style="text-align: center;">Galería de Imágenes</h2>
     <div class="galeria-imagenes">
@@ -276,7 +288,7 @@
     </div>
   </section>
 
-  <!-- Modal de Zoom -->
+  <!-- Modal -->
   <div id="modal" class="modal" onclick="cerrarModal()">
     <span class="close">&times;</span>
     <img class="modal-content" id="modalImagen">
