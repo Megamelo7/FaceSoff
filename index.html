@@ -5,16 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FaceSoff by Sofía Bareiro</title>
 
-  <!-- Font Awesome para íconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-  <!-- Estilos CSS -->
   <style>
-    /* ------------------------------- */
-    /* ESTILO NAVIDEÑO / AÑO NUEVO    */
-    /* ------------------------------- */
+    /* --------------------------------------------------------- */
+    /*          ESTILO NAVIDEÑO SIN IMÁGENES EXTERNAS            */
+    /* --------------------------------------------------------- */
 
-    /* Copos de nieve */
+    /* Copos de nieve generados por CSS */
     body::before {
       content: "";
       position: fixed;
@@ -23,75 +21,90 @@
       width: 100%;
       height: 100%;
       pointer-events: none;
-      background-image: url("https://i.imgur.com/7TtfwqE.png");
+      background-image:
+        radial-gradient(white 1.8px, transparent 2px),
+        radial-gradient(white 1.8px, transparent 2px),
+        radial-gradient(white 1.8px, transparent 2px),
+        radial-gradient(white 1.8px, transparent 2px);
+      background-size: 120px 120px, 180px 180px, 150px 150px, 200px 200px;
+      background-position:
+        0 0,
+        40px 60px,
+        100px 20px,
+        60px 100px;
+      animation: snow 18s linear infinite;
       opacity: 0.25;
-      animation: nieve 15s linear infinite;
       z-index: 1;
     }
 
-    @keyframes nieve {
-      0% { background-position: 0px 0px; }
-      100% { background-position: 0px 1000px; }
+    @keyframes snow {
+      0% { background-position-y: 0, 0, 0, 0; }
+      100% { background-position-y: 1000px, 1200px, 900px, 1400px; }
     }
 
-    /* Luces navideñas en el header */
-    header {
-      position: relative;
-      overflow: visible;
-    }
-
+    /* Luces navideñas con CSS (sin imágenes) */
     header::after {
       content: "";
       position: absolute;
-      top: -15px;
+      top: -8px;
       left: 0;
       width: 100%;
-      height: 40px;
-      background-image: url("https://i.imgur.com/na8r1xt.png");
-      background-size: contain;
-      background-repeat: repeat-x;
-      animation: luces 1.5s linear infinite;
+      height: 25px;
+      background: repeating-linear-gradient(
+        90deg,
+        red 0 15px,
+        transparent 15px 20px,
+        yellow 20px 35px,
+        transparent 35px 40px,
+        green 40px 55px,
+        transparent 55px 60px
+      );
+      filter: brightness(1.2);
+      animation: luzNavidad 2s infinite alternate;
       z-index: 5;
     }
 
-    @keyframes luces {
-      0% { opacity: 0.7; }
-      50% { opacity: 1; }
-      100% { opacity: 0.7; }
+    @keyframes luzNavidad {
+      0% { opacity: 0.6; }
+      100% { opacity: 1; }
     }
 
-    /* ------------------------------- */
-    /* ESTILO ORIGINAL + FESTIVO       */
-    /* ------------------------------- */
+    /* --------------------------------------------------------- */
+    /*                ESTILOS ORIGINALES + FESTIVOS              */
+    /* --------------------------------------------------------- */
 
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
       background: #fff8f5;
       color: #5a4a42;
+      position: relative;
+      z-index: 5;
     }
 
     header {
-      background: linear-gradient(135deg, #f7d3d3, #ffeff7);
+      background: linear-gradient(135deg, #f7d3d3, #ffeaf1);
       padding: 2rem 1rem;
+      position: relative;
+      z-index: 10;
+      box-shadow: 0 0 12px rgba(255, 160, 180, 0.4);
     }
 
     .header-container {
+      max-width: 1000px;
+      margin: auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      max-width: 1000px;
-      margin: 0 auto;
       position: relative;
-      z-index: 10;
     }
 
     .header-text h1 {
       font-size: 3rem;
       margin: 0;
       color: #b35b76;
-      text-shadow: 0 0 10px #ffdde6;
-      animation: brillo 3s ease-in-out infinite;
+      text-shadow: 0 0 10px #ffe0eb;
+      animation: brillo 3s infinite ease-in-out;
     }
 
     @keyframes brillo {
@@ -101,19 +114,19 @@
     }
 
     nav {
-      background-color: #f7cdd8;
-      padding: 0.5rem;
+      background-color: #f3c9d4;
+      padding: 0.6rem;
       text-align: center;
-      border-bottom: 3px solid #ffdadf;
-      border-top: 3px solid #ffdadf;
-      box-shadow: 0 0 10px rgba(255, 180, 193, 0.5);
+      border-top: 2px solid #ffe2ea;
+      border-bottom: 2px solid #ffe2ea;
+      box-shadow: 0 0 10px rgba(255, 200, 210, 0.5);
     }
 
     nav a {
       margin: 0 1rem;
       text-decoration: none;
-      color: #81374c;
       font-weight: bold;
+      color: #81374c;
     }
 
     section {
@@ -121,14 +134,13 @@
       margin: 2rem auto;
       padding: 1rem;
       position: relative;
-      z-index: 50;
+      z-index: 10;
     }
 
-    /* Imagen de presentación */
+    /* Imagen presentación */
     .imagen-presentacion {
       display: flex;
       justify-content: center;
-      align-items: center;
     }
 
     .imagen-presentacion img {
@@ -136,53 +148,75 @@
       height: 280px;
       object-fit: cover;
       border-radius: 10px;
-      box-shadow: 0 0 12px rgba(255, 190, 190, 0.7);
+      box-shadow: 0 0 12px rgba(255, 180, 190, 0.6);
     }
 
     /* Servicios */
-    .service {
+    .service, #sobre {
       background-color: #fdf1f4;
       border-left: 5px solid #e6a1b2;
       padding: 1rem;
       margin-bottom: 1.5rem;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(255, 190, 190, 0.4);
-    }
-
-    /* Sección Sobre */
-    #sobre {
-      background-color: #fdf1f4;
-      border-left: 5px solid #e6a1b2;
-      padding: 1rem;
-      margin-bottom: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(255, 200, 200, 0.5);
+      box-shadow: 0 0 10px rgba(255, 200, 210, 0.5);
     }
 
     #sobre h2 {
-      font-size: 1.5rem;
       color: #b35b76;
       display: flex;
       align-items: center;
     }
 
-    #sobre .icono-pregunta {
-      margin-right: 10px;
-      color: #b35b76;
-      font-size: 1.5rem;
+    .galeria-imagenes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
     }
 
-    /* Galería */
     .galeria-imagenes img {
-      border: 3px solid #ffdce6;
+      width: 200px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 3px solid #ffdde6;
       box-shadow: 0 0 10px rgba(255, 200, 200, 0.6);
+      transition: 0.3s;
     }
 
     .galeria-imagenes img:hover {
       transform: scale(1.07);
     }
 
-    /* Footer con efecto año nuevo */
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.8);
+      text-align: center;
+      padding-top: 60px;
+      z-index: 1000;
+    }
+
+    /* WhatsApp */
+    #agendarBtn {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #e6a1b2;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.3rem;
+      border-radius: 25px;
+      cursor: pointer;
+      text-decoration: none;
+      z-index: 999;
+      box-shadow: 0 0 15px rgba(255,100,150,0.4);
+    }
+
     footer {
       background-color: #f7d3d3;
       text-align: center;
@@ -202,7 +236,6 @@
 
 <body>
 
-  <!-- Encabezado -->
   <header>
     <div class="header-container">
       <div class="header-text">
@@ -210,12 +243,13 @@
         <p>by Sofía Bareiro · COSMETOLOGÍA - PRODUCTOS FS</p>
       </div>
       <div class="header-icon">
-        <a href="https://www.instagram.com/face.soff/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.instagram.com/face.soff/" target="_blank">
+          <i class="fab fa-instagram" style="font-size: 2rem; color:#b35b76;"></i>
+        </a>
       </div>
     </div>
   </header>
 
-  <!-- Navegación -->
   <nav>
     <a href="#galeria">Galería</a>
     <a href="#servicios">Servicios</a>
@@ -223,79 +257,66 @@
     <a href="#contacto">Contacto</a>
   </nav>
 
-  <!-- Imagen de Presentación -->
   <section id="presentacion">
     <div class="imagen-presentacion">
-      <img src="FaceSoff_Presentacion.png" alt="Presentación FaceSoff" />
+      <img src="FaceSoff_Presentacion.png" alt="Presentación FaceSoff"/>
     </div>
   </section>
 
-  <!-- Sobre Nosotros -->
   <section id="sobre">
-    <h2><i class="fas fa-question-circle icono-pregunta"></i> Sobre FaceSoff</h2>
-    <p>Somos un espacio dedicado a la belleza y el cuidado personal. Combinamos servicios de cosmetología profesional con productos pensados para cuidar tu piel todos los días.</p>
+    <h2><i class="fas fa-question-circle" style="margin-right:8px;"></i> Sobre FaceSoff</h2>
+    <p>Somos un espacio dedicado a la belleza y el cuidado personal…</p>
   </section>
 
-  <!-- Galería -->
   <section id="galeria">
-    <h2 style="text-align: center;">Galería de Imágenes</h2>
+    <h2 style="text-align:center;">Galería de Imágenes</h2>
     <div class="galeria-imagenes">
       <img src="imagen1.jpg" onclick="abrirModal(this.src)">
       <img src="imagen2.jpg" onclick="abrirModal(this.src)">
       <img src="imagen3.jpg" onclick="abrirModal(this.src)">
-      <img src="imagen4.jpg" onclick="abrirModal(this.src)">
     </div>
   </section>
 
-  <!-- Modal -->
   <div id="modal" class="modal" onclick="cerrarModal()">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="modalImagen">
+    <img id="modalImagen" style="max-width:70%; max-height:80%;">
   </div>
 
-  <!-- Servicios -->
   <section id="servicios">
-    <h2 style="text-align: center;">Servicios</h2>
+    <h2 style="text-align:center;">Servicios</h2>
+
     <div class="service">
       <h3>✨ Servicios Cosmetológicos</h3>
-      <p>Tratamientos para el cuidado estético y bienestar facial.</p>
+      <p>Tratamientos profesionales…</p>
     </div>
+
     <div class="service">
       <h3>🧴 Productos FS</h3>
-      <p>Belleza, cosmética y cuidado personal.</p>
+      <p>LIDHERMA, IDRAET, EXEL y más…</p>
     </div>
   </section>
 
-  <!-- Contacto -->
   <section id="contacto">
-    <h2 style="text-align: center;">Contacto</h2>
-    <p>⏰ Lunes a Viernes 08–19 | Sábados 08–14<br>
-       📍 Chilavert, BsAs</p>
+    <h2 style="text-align:center;">Contacto</h2>
+    <p>📍 Chilavert, Buenos Aires<br>
+    ⏰ Lunes a Sábados</p>
   </section>
 
-  <!-- WhatsApp -->
-  <a id="agendarBtn" href="https://wa.me/5491155943200?text=Hola Sofi, quiero reservar un turno ✨" target="_blank">
+  <a id="agendarBtn" href="https://wa.me/5491155943200?text=Hola%20Sofi%2C%20quiero%20reservar%20un%20turno%20✨" target="_blank">
     AGENDAR TURNO
   </a>
 
-  <!-- Footer -->
   <footer>
-    <p>🎆 &copy; 2025 FaceSoff · Felices Fiestas 🎄✨</p>
+    🎄✨ FaceSoff · Felices Fiestas ✨🎆
   </footer>
 
-  <!-- Script Modal -->
   <script>
-    function abrirModal(src) {
+    function abrirModal(src){
       document.getElementById("modal").style.display = "block";
       document.getElementById("modalImagen").src = src;
     }
-    function cerrarModal() {
+    function cerrarModal(){
       document.getElementById("modal").style.display = "none";
     }
-    document.querySelector(".close").onclick = function(event) {
-      event.stopPropagation();
-      cerrarModal();
-    };
   </script>
 
 </body>
