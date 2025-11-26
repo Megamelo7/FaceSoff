@@ -1,54 +1,211 @@
-// -------- Modal Galería --------
-function abrirModal(src) {
-  let modal = document.getElementById("modal");
-  let modalImg = document.getElementById("modal-img");
-
-  modal.style.display = "flex";
-  modalImg.src = src;
+/* ----------- VARIABLES ----------- */
+:root {
+  --rosa: #e9b7c8;
+  --rosa-oscuro: #b35b76;
+  --rosa-claro: #ffeef4;
+  --blanco: #ffffff;
+  --texto: #4a3f3f;
 }
 
-function cerrarModal() {
-  document.getElementById("modal").style.display = "none";
+/* ----------- GENERAL ----------- */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--rosa-claro);
+  color: var(--texto);
 }
 
+.section {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
 
-// -------- Envío del formulario a WhatsApp --------
-document.getElementById("form-contacto").addEventListener("submit", function(e) {
-  e.preventDefault();
+/* ----------- NAV ----------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: var(--blanco);
+  border-bottom: 2px solid #f3c9d8;
+  padding: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 200;
+}
 
-  let nombre = document.getElementById("nombre").value.trim();
-  let telefono = document.getElementById("telefono").value.trim();
-  let mensaje = document.getElementById("mensaje").value.trim();
+.nav-logo {
+  color: var(--rosa-oscuro);
+  font-size: 1.6rem;
+  font-weight: bold;
+}
 
-  let formOk = document.getElementById("form-ok");
+.nav-links a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: var(--rosa-oscuro);
+  font-weight: 600;
+}
 
-  // Validación
-  if (nombre === "" || telefono === "" || mensaje === "") {
-    formOk.style.color = "red";
-    formOk.textContent = "Completa todos los campos antes de enviar.";
-    return;
-  }
+.nav-links a:hover {
+  color: #7a3f54;
+}
 
-  // Tu número de WhatsApp
-  let telefonoDestino = "5491152577608";
+/* ----------- HERO ----------- */
+.hero {
+  background: linear-gradient(135deg, #ffdce9, #f7bed0);
+  padding: 5rem 1rem;
+  text-align: center;
+  color: var(--rosa-oscuro);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
 
-  // Mensaje formateado
-  let texto =
-    "Nuevo mensaje desde FaceSoff%0A%0A" +
-    "*Nombre:* " + nombre + "%0A" +
-    "*Teléfono:* " + telefono + "%0A" +
-    "*Mensaje:* " + mensaje;
+.hero-content h1 {
+  margin: 0;
+  font-size: 3.2rem;
+  text-shadow: 0 0 10px rgba(255,200,220,0.8);
+}
 
-  // Abrir WhatsApp
-  let url = "https://wa.me/" + telefonoDestino + "?text=" + texto;
+.hero-content p {
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+}
 
-  window.open(url, "_blank");
+.btn-hero {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.6rem;
+  background: var(--rosa-oscuro);
+  color: var(--blanco);
+  text-decoration: none;
+  border-radius: 40px;
+  font-size: 1.1rem;
+  transition: 0.3s;
+}
 
-  formOk.style.color = "green";
-  formOk.textContent = "Redirigiendo a WhatsApp...";
+.btn-hero:hover {
+  background: #8c3c53;
+}
 
-  // Limpiar formulario
-  document.getElementById("nombre").value = "";
-  document.getElementById("telefono").value = "";
-  document.getElementById("mensaje").value = "";
-});
+/* ----------- PRESENTACIÓN ----------- */
+.presentacion-img img {
+  width: 420px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+/* ----------- GALERÍA ----------- */
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.galeria-grid img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.galeria-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* ----------- MODAL ----------- */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+#modal-img {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 12px;
+}
+
+/* ----------- SERVICIOS ----------- */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--blanco);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* ----------- SOBRE ----------- */
+.sobre-box {
+  background: var(--blanco);
+  padding: 1.6rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  font-size: 1.15rem;
+  line-height: 1.7rem;
+}
+
+/* ----------- CONTACTO (solo WhatsApp) ----------- */
+.contacto-box {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.btn-contacto-wsp {
+  display: inline-block;
+  background: #25D366;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1.3rem;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: 0.3s ease;
+}
+
+.btn-contacto-wsp:hover {
+  background: #1ebe5b;
+  transform: scale(1.05);
+}
+
+/* ----------- BOTÓN FLOTANTE WSP ----------- */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  padding: 16px 20px;
+  color: white;
+  border-radius: 50px;
+  font-size: 1.6rem;
+  text-decoration: none;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  z-index: 999;
+}
+
+.whatsapp-btn:hover {
+  background: #1fa03a;
+}
+
+/* ----------- FOOTER ----------- */
+footer {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 1.2rem;
+  background: var(--rosa);
+  border-top: 3px solid #ffd7e6;
+  font-weight: bold;
+}
