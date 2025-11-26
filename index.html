@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -21,48 +21,25 @@
     header {
       background: linear-gradient(135deg, #f7d3d3, #fce9f1);
       padding: 2rem 1rem;
-      text-align: center;
     }
 
     .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       max-width: 1000px;
       margin: 0 auto;
     }
 
-    /* Título principal */
-    .titulo-primaveral {
+    .header-text h1 {
       font-size: 3rem;
       margin: 0;
-      font-weight: bold;
-      color: #d65c8a;
-      text-shadow: 2px 2px 6px rgba(255, 182, 193, 0.8);
-    }
-
-    /* Subtítulo animado */
-    .subtitulo-primaveral {
-      font-size: 1.8rem;
-      margin: 0.5rem 0 1rem 0;
-      font-weight: bold;
-      background: linear-gradient(90deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c0fe, #f6d365, #96e6a1);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: coloresPrimavera 6s infinite alternate;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.1);
-    }
-
-    @keyframes coloresPrimavera {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 100% 50%; }
+      color: #b35b76;
     }
 
     .header-text p {
       font-size: 1.2rem;
       margin-top: 0.5rem;
-      color: #81374c;
-    }
-
-    .header-icon {
-      margin-top: 1rem;
     }
 
     .header-icon a {
@@ -118,7 +95,7 @@
       border-radius: 10px;
     }
 
-    /* Sobre FaceSoff */
+    /* Sección "Sobre FaceSoff" con el estilo de "Servicios" */
     #sobre {
       background-color: #fdf1f4;
       border-left: 5px solid #e6a1b2;
@@ -129,21 +106,21 @@
     }
 
     #sobre h2 {
-      font-size: 1.5rem;
-      color: #b35b76;
+      font-size: 1.5rem;  /* Ajustado al tamaño de "Servicios Cosmetológicos" */
+      color: #b35b76;  /* Mismo color */
       margin-bottom: 0.5rem;
       display: flex;
       align-items: center;
     }
 
     #sobre p {
-      font-size: 1rem;
+      font-size: 1rem; /* Reducido el tamaño de la letra */
       color: #5a4a42;
       margin-bottom: 1rem;
     }
 
     #sobre .icono-pregunta {
-      margin-right: 10px;
+      margin-right: 10px; /* Alineado a la izquierda del texto */
       color: #b35b76;
       font-size: 1.5rem;
     }
@@ -206,7 +183,7 @@
       cursor: pointer;
     }
 
-    /* Botón WhatsApp */
+    /* Botón flotante WhatsApp */
     #agendarBtn {
       position: fixed;
       bottom: 20px;
@@ -246,8 +223,7 @@
   <header>
     <div class="header-container">
       <div class="header-text">
-        <h1 class="titulo-primaveral">🌸 FaceSoff 🌼</h1>
-        <h2 class="subtitulo-primaveral">✨ ¡Feliz Primavera! ✨</h2>
+        <h1>FaceSoff</h1>
         <p>by Sofía Bareiro · COSMETOLOGÍA - PRODUCTOS FS</p>
       </div>
       <div class="header-icon">
@@ -277,7 +253,7 @@
     <p>Somos un espacio dedicado a la belleza y el cuidado personal. Combinamos servicios de cosmetología profesional con productos pensados para cuidar tu piel todos los días.</p>
   </section>
 
-  <!-- Galería -->
+  <!-- Galería de Imágenes -->
   <section id="galeria">
     <h2 style="text-align: center;">Galería de Imágenes</h2>
     <div class="galeria-imagenes">
@@ -288,7 +264,7 @@
     </div>
   </section>
 
-  <!-- Modal -->
+  <!-- Modal de Zoom -->
   <div id="modal" class="modal" onclick="cerrarModal()">
     <span class="close">&times;</span>
     <img class="modal-content" id="modalImagen">
@@ -314,6 +290,7 @@
     <h2 style="text-align: center;">Contacto</h2>
     <p>
       ⏰ Lunes a Viernes de 08:00 a 19:00 y Sábados de 08:00 a 14:00<br>
+      📍 Chilavert<br><br>
       📍 Chilavert, BsAs<br><br>
     </p>
   </section>
