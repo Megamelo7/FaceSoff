@@ -30,7 +30,7 @@ document.getElementById("form-contacto").addEventListener("submit", function(e) 
   }
 
   // Tu número de WhatsApp
-  let telefonoDestino = "5491155943200";
+  let telefonoDestino = "5491152577608";
 
   // Mensaje formateado
   let texto =
