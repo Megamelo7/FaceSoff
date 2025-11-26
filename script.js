@@ -11,24 +11,44 @@ function cerrarModal() {
   document.getElementById("modal").style.display = "none";
 }
 
-// -------- Formulario --------
+
+// -------- Envío del formulario a WhatsApp --------
 document.getElementById("form-contacto").addEventListener("submit", function(e) {
   e.preventDefault();
 
-  let nombre = document.getElementById("nombre");
-  let email = document.getElementById("email");
-  let mensaje = document.getElementById("mensaje");
+  let nombre = document.getElementById("nombre").value.trim();
+  let telefono = document.getElementById("telefono").value.trim();
+  let mensaje = document.getElementById("mensaje").value.trim();
+
   let formOk = document.getElementById("form-ok");
 
-  if (nombre.value === "" || email.value === "" || mensaje.value === "") {
+  // Validación
+  if (nombre === "" || telefono === "" || mensaje === "") {
     formOk.style.color = "red";
     formOk.textContent = "Completa todos los campos antes de enviar.";
     return;
   }
 
+  // Tu número de WhatsApp
+  let telefonoDestino = "5491155943200";
+
+  // Mensaje formateado
+  let texto =
+    "Nuevo mensaje desde FaceSoff%0A%0A" +
+    "*Nombre:* " + nombre + "%0A" +
+    "*Teléfono:* " + telefono + "%0A" +
+    "*Mensaje:* " + mensaje;
+
+  // Abrir WhatsApp
+  let url = "https://wa.me/" + telefonoDestino + "?text=" + texto;
+
+  window.open(url, "_blank");
+
   formOk.style.color = "green";
-  formOk.textContent = "¡Mensaje enviado correctamente!";
-  nombre.value = "";
-  email.value = "";
-  mensaje.value = "";
+  formOk.textContent = "Redirigiendo a WhatsApp...";
+
+  // Limpiar formulario
+  document.getElementById("nombre").value = "";
+  document.getElementById("telefono").value = "";
+  document.getElementById("mensaje").value = "";
 });
