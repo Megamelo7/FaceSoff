@@ -6,757 +6,588 @@
   <title>FaceSoff · Sofía Bareiro</title>
 
   <!-- Íconos -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
   <!-- Fuente -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 
   <style>
-    :root {
-      --rosa: #f4c6d8;
-      --rosa-oscuro: #b35b76;
-      --rosa-muy-oscuro: #8b3a52;
-      --fondo: #fff7fb;
-      --blanco: #ffffff;
-      --texto: #4c3a3e;
-      --gris-suave: #f0e7f1;
-    }
-
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
-        "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #ffe4f1 0, #fff7fb 40%, #fff 100%);
-      color: var(--texto);
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* NAVBAR */
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #f1d7e2;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.6rem 1.5rem;
-    }
-
-    .nav-logo {
-      font-weight: 700;
-      font-size: 1.4rem;
-      color: var(--rosa-oscuro);
-      letter-spacing: 1px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.4rem;
-      font-size: 0.95rem;
-      font-weight: 500;
-    }
-
-    .nav-links a {
-      position: relative;
-      padding-bottom: 0.2rem;
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      height: 2px;
-      background: var(--rosa-oscuro);
-      transition: width 0.2s ease;
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .nav-toggle {
-      display: none;
-      font-size: 1.4rem;
-      cursor: pointer;
-      color: var(--rosa-oscuro);
-    }
-
-    /* HERO */
-    .hero {
-      max-width: 1100px;
-      margin: 1.5rem auto 3rem;
-      padding: 0 1.5rem;
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .hero-text h1 {
-      font-size: 2.7rem;
-      margin: 0 0 0.7rem;
-      color: var(--rosa-muy-oscuro);
-    }
-
-    .hero-text h1 span {
-      color: var(--rosa-oscuro);
-    }
-
-    .hero-text p {
-      margin: 0.2rem 0 1.3rem;
-      font-size: 1.05rem;
-      max-width: 520px;
-    }
-
-    .hero-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .hero-badge {
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 999px;
-      padding: 0.35rem 0.8rem;
-      font-size: 0.8rem;
-      border: 1px solid #f5d9e6;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .hero-badge i {
-      color: var(--rosa-oscuro);
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      align-items: center;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--rosa-oscuro), var(--rosa-muy-oscuro));
-      color: white;
-      border-radius: 999px;
-      padding: 0.8rem 1.6rem;
-      font-weight: 600;
-      font-size: 0.95rem;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 10px 25px rgba(179, 91, 118, 0.35);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 14px 30px rgba(179, 91, 118, 0.4);
-    }
-
-    .btn-ghost {
-      border-radius: 999px;
-      border: 1px solid #e3c3d4;
-      padding: 0.8rem 1.4rem;
-      font-size: 0.9rem;
-      background: rgba(255, 255, 255, 0.7);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      cursor: pointer;
-    }
-
-    .btn-ghost i {
-      color: var(--rosa-oscuro);
-    }
-
-    .hero-img-wrapper {
-      display: flex;
-      justify-content: center;
-    }
-
-    .hero-img {
-      width: 100%;
-      max-width: 360px;
-      border-radius: 22px;
-      overflow: hidden;
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
-      position: relative;
-    }
-
-    .hero-img img {
-      width: 100%;
-      display: block;
-    }
-
-    .hero-tag {
-      position: absolute;
-      bottom: 12px;
-      left: 12px;
-      background: rgba(255, 255, 255, 0.9);
-      padding: 0.5rem 0.8rem;
-      border-radius: 14px;
-      font-size: 0.75rem;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.17);
-    }
-
-    .hero-tag i {
-      color: #f5a623;
-    }
-
-    /* SECCIONES GENERALES */
-    .section {
-      max-width: 1100px;
-      margin: 0 auto 3.5rem;
-      padding: 0 1.5rem;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .section-title h2 {
-      margin: 0;
-      font-size: 2rem;
-      color: var(--rosa-muy-oscuro);
-    }
-
-    .section-title p {
-      margin-top: 0.5rem;
-      font-size: 0.95rem;
-      color: #7b656a;
-    }
-
-    /* DESTACADOS */
-    .highlights {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.2rem;
-    }
-
-    .highlight-card {
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 16px;
-      padding: 1.2rem;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-      text-align: left;
-    }
-
-    .highlight-icon {
-      width: 32px;
-      height: 32px;
-      border-radius: 10px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: #ffe9f2;
-      color: var(--rosa-oscuro);
-      margin-bottom: 0.3rem;
-    }
-
-    .highlight-card h3 {
-      margin: 0;
-      font-size: 1.05rem;
-      color: var(--rosa-oscuro);
-    }
-
-    .highlight-card p {
-      margin: 0;
-      font-size: 0.9rem;
-      color: #7b656a;
-    }
-
-    /* SOBRE NOSOTROS */
-    .about {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .about-text p {
-      margin: 0 0 0.8rem;
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    .about-list {
-      list-style: none;
-      padding-left: 0;
-      margin: 0.5rem 0 0;
-    }
-
-    .about-list li {
-      margin-bottom: 0.35rem;
-      font-size: 0.9rem;
-    }
-
-    .about-list i {
-      color: var(--rosa-oscuro);
-      margin-right: 0.35rem;
-    }
-
-    .about-box {
-      background: linear-gradient(145deg, #ffeaf3, #f6d5e4);
-      border-radius: 18px;
-      padding: 1.2rem 1.3rem;
-      font-size: 0.9rem;
-      line-height: 1.6;
-      box-shadow: 0 12px 30px rgba(189, 114, 142, 0.2);
-    }
-
-    /* SERVICIOS (TABS) */
-    .services-container {
-      display: grid;
-      grid-template-columns: 260px minmax(0, 1fr);
-      gap: 1.5rem;
-    }
-
-    .services-tabs {
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
-
-    .service-tab {
-      border-radius: 999px;
-      padding: 0.7rem 1rem;
-      text-align: left;
-      background: rgba(255, 255, 255, 0.9);
-      border: 1px solid transparent;
-      cursor: pointer;
-      font-size: 0.9rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.5rem;
-      transition: 0.2s;
-    }
-
-    .service-tab span {
-      display: inline-flex;
-      gap: 0.5rem;
-      align-items: center;
-    }
-
-    .service-tab i {
-      color: var(--rosa-oscuro);
-    }
-
-    .service-tab.active {
-      border-color: #f0c1d8;
-      background: #ffeaf4;
-      color: var(--rosa-muy-oscuro);
-    }
-
-    .service-content {
-      background: rgba(255, 255, 255, 0.95);
-      border-radius: 18px;
-      padding: 1.4rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      font-size: 0.95rem;
-      text-align: left;
-      min-height: 220px;
-    }
-
-    .service-content h3 {
-      margin-top: 0;
-      color: var(--rosa-oscuro);
-    }
-
-    .pill-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 0.8rem;
-    }
-
-    .pill {
-      border-radius: 999px;
-      padding: 0.3rem 0.8rem;
-      font-size: 0.8rem;
-      background: #f5e0ec;
-    }
-
-    /* GALERÍA */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-    }
-
-    .gallery-item {
-      position: relative;
-      border-radius: 16px;
-      overflow: hidden;
-      cursor: pointer;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 320px;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.3s ease;
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.05);
-    }
-
-    .gallery-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.35),
-        transparent 50%
-      );
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      padding: 0.7rem 0.8rem;
-      color: white;
-      font-size: 0.8rem;
-    }
-
-    .gallery-overlay span {
-      font-weight: 500;
-    }
-
-    .gallery-overlay i {
-      font-size: 1.1rem;
-    }
-
-    /* MODAL GALERÍA */
-    .modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(5, 0, 10, 0.9);
-      justify-content: center;
-      align-items: center;
-      z-index: 2000;
-    }
-
-    .modal.open {
-      display: flex;
-    }
-
-    .modal-img {
-      max-width: 80%;
-      max-height: 80%;
-      border-radius: 14px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    }
-
-    .modal-close,
-    .modal-prev,
-    .modal-next {
-      position: absolute;
-      color: white;
-      font-size: 1.8rem;
-      cursor: pointer;
-      padding: 0.4rem 0.6rem;
-      border-radius: 999px;
-      background: rgba(0, 0, 0, 0.3);
-    }
-
-    .modal-close {
-      top: 20px;
-      right: 20px;
-    }
-
-    .modal-prev {
-      left: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    .modal-next {
-      right: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    /* TESTIMONIOS */
-    .testimonials {
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 18px;
-      padding: 1.8rem;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
-    }
-
-    .testimonial-text {
-      font-style: italic;
-      margin-bottom: 0.8rem;
-    }
-
-    .testimonial-author {
-      font-weight: 600;
-      font-size: 0.95rem;
-      color: var(--rosa-muy-oscuro);
-    }
-
-    .testimonial-role {
-      font-size: 0.8rem;
-      color: #8f7580;
-    }
-
-    .testimonial-dots {
-      display: flex;
-      gap: 0.4rem;
-      margin-top: 0.8rem;
-    }
-
-    .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #e2c2d3;
-      cursor: pointer;
-    }
-
-    .dot.active {
-      background: var(--rosa-oscuro);
-    }
-
-    /* FAQ */
-    .faq {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
-      gap: 1.5rem;
-      align-items: flex-start;
-    }
-
-    .faq-intro {
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    .accordion {
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 14px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-      overflow: hidden;
-    }
-
-    .accordion-item {
-      border-bottom: 1px solid #f0d9e5;
-    }
-
-    .accordion-header {
-      padding: 0.9rem 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-      font-size: 0.9rem;
-    }
-
-    .accordion-header span {
-      font-weight: 500;
-    }
-
-    .accordion-header i {
-      color: var(--rosa-oscuro);
-      font-size: 1rem;
-    }
-
-    .accordion-body {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.25s ease;
-      padding: 0 1rem;
-      font-size: 0.86rem;
-      color: #7c636f;
-    }
-
-    .accordion-body-inner {
-      padding: 0.4rem 0 0.9rem;
-    }
-
-    .accordion-item.open .accordion-body {
-      max-height: 200px;
-    }
-
-    /* CONTACTO */
-    .contact-section {
-      text-align: center;
-    }
-
-    .contact-section p {
-      font-size: 0.95rem;
-      margin-bottom: 1.4rem;
-    }
-
-    .btn-contact {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: #25d366;
-      color: white;
-      padding: 0.8rem 1.8rem;
-      border-radius: 999px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
-    }
-
-    .btn-contact i {
-      font-size: 1.2rem;
-    }
-
-    .btn-contact:hover {
-      background: #1ebe5b;
-      transform: translateY(-1px);
-    }
-
-    /* BOTÓN FLOTANTE WPP */
-    .whatsapp-btn {
-      position: fixed;
-      bottom: 19px;
-      right: 19px;
-      background: #25d366;
-      color: white;
-      width: 50px;
-      height: 50px;
-      border-radius: 999px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-      z-index: 1500;
-    }
-
-    .whatsapp-btn:hover {
-      background: #1fa955;
-      transform: translateY(-1px);
-    }
-
-    /* BOTÓN SCROLL TOP */
-    .scroll-top {
-      position: fixed;
-      bottom: 19px;
-      left: 19px;
-      background: rgba(255, 255, 255, 0.9);
-      color: var(--rosa-oscuro);
-      width: 38px;
-      height: 38px;
-      border-radius: 999px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
-      z-index: 1400;
-      cursor: pointer;
-      opacity: 0;
-      pointer-events: none;
-      transition: 0.2s;
-    }
-
-    .scroll-top.visible {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    /* FOOTER */
-    footer {
-      margin-top: 2.5rem;
-      padding: 1.3rem;
-      text-align: center;
-      font-size: 0.85rem;
-      background: #f8e3ef;
-      color: #725561;
-    }
-
-    /* SCROLL ANIMATIONS */
-    .reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .hero-img-wrapper {
-        order: -1;
-      }
-      .about,
-      .services-container,
-      .faq {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    @media (max-width: 700px) {
-      .nav-links {
-        position: absolute;
-        top: 58px;
-        right: 10px;
-        background: rgba(255, 255, 255, 0.98);
-        border-radius: 14px;
-        flex-direction: column;
-        padding: 0.7rem 1rem;
-        box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
-        display: none;
-      }
-
-      .nav-links.open {
-        display: flex;
-      }
-
-      .nav-toggle {
-        display: block;
-      }
-    }
-  </style>
+/* ========================================================= */
+/* VARIABLES */
+/* ========================================================= */
+:root {
+  --rosa: #f4c6d8;
+  --rosa-oscuro: #b35b76;
+  --rosa-muy-oscuro: #8b3a52;
+  --fondo: #fff7fb;
+  --blanco: #ffffff;
+  --texto: #4c3a3e;
+  --gris-suave: #f0e7f1;
+
+  /* NAVIDAD */
+  --navidad-rojo: #b30000;
+  --navidad-verde: #0f7a3a;
+  --navidad-dorado: #f6d674;
+}
+
+/* ========================================================= */
+/* RESETEO GENERAL */
+/* ========================================================= */
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(circle at top, #ffe4f1 0, #fff7fb 40%, #fff 100%);
+  color: var(--texto);
+  transition: background 0.4s ease, border 0.4s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ========================================================= */
+/* NAVBAR */
+/* ========================================================= */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #f1d7e2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 1.5rem;
+}
+
+.nav-logo {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--rosa-oscuro);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.4rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.nav-links a {
+  position: relative;
+  padding-bottom: 0.2rem;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--rosa-oscuro);
+  transition: width 0.25s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-toggle {
+  display: none;
+  font-size: 1.7rem;
+  cursor: pointer;
+  color: var(--rosa-oscuro);
+}
+
+/* BOTÓN NAVIDAD */
+.navidad-toggle {
+  font-size: 1.6rem;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: 0.3s;
+}
+
+/* ========================================================= */
+/* HERO */
+/* ========================================================= */
+.hero {
+  max-width: 1100px;
+  margin: 1.5rem auto 3rem;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-size: 2.7rem;
+  margin: 0 0 0.7rem;
+  color: var(--rosa-muy-oscuro);
+}
+
+.hero-text h1 span {
+  color: var(--rosa-oscuro);
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.2rem;
+}
+
+.hero-badge {
+  background: white;
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid #f5d9e6;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+}
+
+.hero-img-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-img {
+  width: 100%;
+  max-width: 360px;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+  position: relative;
+}
+
+.hero-tag {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.5rem 0.8rem;
+  border-radius: 14px;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* ========================================================= */
+/* SECCIONES */
+/* ========================================================= */
+.section {
+  max-width: 1100px;
+  padding: 0 1.5rem;
+  margin: 0 auto 3.5rem;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-title h2 {
+  margin: 0;
+  color: var(--rosa-muy-oscuro);
+  font-size: 2rem;
+}
+
+.section-title p {
+  margin-top: 0.5rem;
+  color: #7b656a;
+}
+
+/* ========================================================= */
+/* DESTACADOS */
+/* ========================================================= */
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem;
+}
+
+.highlight-card {
+  background: white;
+  padding: 1.2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  text-align: left;
+}
+
+.highlight-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: #ffe9f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--rosa-oscuro);
+  margin-bottom: 0.4rem;
+}
+
+.highlight-card p {
+  margin: 0.3rem 0 0;
+}
+
+/* ========================================================= */
+/* SERVICIOS */
+/* ========================================================= */
+.services-container {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 1.5rem;
+}
+
+.services-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.service-tab {
+  border-radius: 999px;
+  padding: 0.7rem 1rem;
+  background: white;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.service-tab.active {
+  border-color: #ffcee1;
+  background: #ffeaf4;
+}
+
+.service-content {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* ========================================================= */
+/* GALERÍA */
+/* ========================================================= */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0.7rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ========================================================= */
+/* MODAL GALERÍA */
+/* ========================================================= */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal.open {
+  display: flex;
+}
+
+.modal-img {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 14px;
+}
+
+.modal-close,
+.modal-prev,
+.modal-next {
+  position: absolute;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 0.4rem 0.6rem;
+  background: rgba(0,0,0,0.35);
+  border-radius: 10px;
+}
+
+.modal-close { top: 20px; right: 20px; }
+.modal-prev { left: 20px; top: 50%; transform: translateY(-50%); }
+.modal-next { right: 20px; top: 50%; transform: translateY(-50%); }
+
+/* ========================================================= */
+/* SOBRE / ABOUT */
+/* ========================================================= */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.about-box {
+  background: linear-gradient(145deg, #ffeaf3, #f6d5e4);
+  padding: 1.2rem 1.5rem;
+  border-radius: 18px;
+}
+
+/* ========================================================= */
+/* FAQ */
+/* ========================================================= */
+.faq {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2rem;
+}
+
+.accordion {
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  overflow: hidden;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #ffe4f2;
+}
+
+.accordion-header {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding: 0 1rem;
+}
+
+.accordion-item.open .accordion-body {
+  max-height: 200px;
+}
+
+/* ========================================================= */
+/* CONTACTO */
+/* ========================================================= */
+.btn-contact {
+  background: #25d366;
+  color: white;
+  padding: 0.8rem 1.6rem;
+  border-radius: 999px;
+  display: inline-flex;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.btn-contact:hover {
+  background: #1ebe5b;
+}
+
+/* ========================================================= */
+/* BOTONES FLOTANTES */
+/* ========================================================= */
+.whatsapp-btn,
+.instagram-btn {
+  position: fixed;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7rem;
+  color: white;
+  z-index: 3000;
+}
+
+.instagram-btn {
+  bottom: 95px;
+  background: #d6249f;
+}
+
+.whatsapp-btn {
+  bottom: 25px;
+  background: #25d366;
+}
+
+.instagram-btn:hover { background: #b21f83; }
+.whatsapp-btn:hover { background: #1fa955; }
+
+/* ========================================================= */
+/* SCROLL TOP */
+/* ========================================================= */
+.scroll-top {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 999px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.25s ease;
+}
+
+.scroll-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ========================================================= */
+/* FOOTER */
+/* ========================================================= */
+footer {
+  margin-top: 3rem;
+  padding: 1.3rem;
+  text-align: center;
+  background: #f8e3ef;
+  font-size: 0.9rem;
+}
+
+/* ========================================================= */
+/* NAVIDAD ON */
+/* ========================================================= */
+body.navidad-on .navbar {
+  border-bottom: 3px solid var(--navidad-rojo);
+  box-shadow: 0 0 15px rgba(255,0,0,0.25);
+}
+
+body.navidad-on .hero {
+  border: 2px solid rgba(255,0,0,0.2);
+  border-radius: 18px;
+  background: linear-gradient(135deg, #fff0f0, #fff9f9);
+}
+
+body.navidad-on .whatsapp-btn::before {
+  content: "🎅";
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  font-size: 1.6rem;
+}
+
+body.navidad-on .instagram-btn::before {
+  content: "🎄";
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  font-size: 1.5rem;
+}
+
+/* NIEVE */
+.snowflake {
+  position: fixed;
+  top: -10px;
+  z-index: 5000;
+  color: white;
+  font-size: 1.2rem;
+  opacity: 0.9;
+  animation: snowfall 8s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes snowfall {
+  0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(110vh) rotate(360deg); opacity: 0.2; }
+}
+
+/* ========================================================= */
+/* RESPONSIVE */
+/* ========================================================= */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .about,
+  .faq,
+  .services-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+
+  .nav-links {
+    position: absolute;
+    top: 58px;
+    right: 10px;
+    background: white;
+    padding: 0.7rem 1rem;
+    border-radius: 14px;
+    display: none;
+    flex-direction: column;
+    gap: 0.9rem;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+}
+</style>
+
 </head>
-<body>
+<body class="navidad-on">
+
   <!-- NAVBAR -->
   <nav class="navbar">
     <div class="nav-logo">FaceSoff</div>
+
     <div class="nav-links" id="navLinks">
       <a href="#inicio">Inicio</a>
       <a href="#servicios">Servicios</a>
@@ -765,8 +596,15 @@
       <a href="#faq">Preguntas</a>
       <a href="#contacto">Contacto</a>
     </div>
-    <div class="nav-toggle" id="navToggle">
-      <i class="fas fa-bars"></i>
+
+    <div style="display:flex; align-items:center; gap:15px;">
+      <!-- Botón Navidad -->
+      <div id="navidadToggle" class="navidad-toggle">🎄</div>
+
+      <!-- Botón menú mobile -->
+      <div class="nav-toggle" id="navToggle">
+        <i class="fas fa-bars"></i>
+      </div>
     </div>
   </nav>
 
@@ -783,15 +621,18 @@
           Cuidado consciente de la piel
         </div>
       </div>
+
       <h1>
         Tu piel, <span>tu momento</span> <br />
         FaceSoff by Sofía Bareiro
       </h1>
+
       <p>
         Un espacio pensado para que puedas desconectar, regalarte un rato de
         bienestar y cuidar tu piel con tratamientos personalizados y productos
         profesionales.
       </p>
+
       <div class="hero-buttons">
         <a
           class="btn-primary"
@@ -800,6 +641,7 @@
         >
           <i class="fab fa-whatsapp"></i> Reservar turno
         </a>
+
         <a href="#servicios" class="btn-ghost">
           Ver servicios <i class="fa-solid fa-arrow-down-long"></i>
         </a>
@@ -816,554 +658,541 @@
       </div>
     </div>
   </section>
-
   <!-- DESTACADOS -->
-  <section class="section reveal">
-    <div class="section-title">
-      <h2>Lo que hace especial a FaceSoff</h2>
-      <p>
-        Más que un tratamiento, una experiencia pensada para vos.
+<section class="section reveal">
+  <div class="section-title">
+    <h2>Lo que hace especial a FaceSoff</h2>
+    <p>Más que un tratamiento, una experiencia pensada para vos.</p>
+  </div>
+
+  <div class="highlights">
+    <div class="highlight-card">
+      <div class="highlight-icon">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+      </div>
+      <h3>Tratamientos personalizados</h3>
+      <p>Cada piel es única. Analizamos tu necesidad y armamos un protocolo a medida.</p>
+    </div>
+
+    <div class="highlight-card">
+      <div class="highlight-icon">
+        <i class="fa-solid fa-droplet"></i>
+      </div>
+      <h3>Productos profesionales</h3>
+      <p>Trabajamos con marcas reconocidas en dermocosmética y cuidado facial.</p>
+    </div>
+
+    <div class="highlight-card">
+      <div class="highlight-icon">
+        <i class="fa-solid fa-heart"></i>
+      </div>
+      <h3>Espacio de bienestar</h3>
+      <p>Ambiente cálido, cómodo y relajado para que disfrutes tu momento.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios" class="section reveal">
+  <div class="section-title">
+    <h2>Servicios</h2>
+    <p>Elegí tu experiencia, nosotras nos encargamos del resto.</p>
+  </div>
+
+  <div class="services-container">
+    <div class="services-tabs">
+      <button class="service-tab active" data-service="limpieza">
+        <span><i class="fa-solid fa-face-smile-beam"></i> Limpieza facial</span>
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+
+      <button class="service-tab" data-service="dermapen">
+        <span><i class="fa-solid fa-pen-nib"></i> Dermapen & Dermaplaning</span>
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+
+      <button class="service-tab" data-service="aparato">
+        <span><i class="fa-solid fa-bolt"></i> Aparatología</span>
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+
+      <button class="service-tab" data-service="productos">
+        <span><i class="fa-solid fa-flask"></i> Productos FS & asesoría</span>
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+
+    <div class="service-content" id="serviceContent">
+      <!-- contenido por JS -->
+    </div>
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section id="galeria" class="section reveal">
+  <div class="section-title">
+    <h2>Galería</h2>
+    <p>Un vistazo a nuestro espacio y algunos resultados.</p>
+  </div>
+
+  <div class="gallery-grid" id="galleryGrid">
+    <div class="gallery-item" data-index="0">
+      <img src="imagen1.jpg" alt="Galería 1" />
+      <div class="gallery-overlay">
+        <span>Tratamiento en cabina</span>
+        <i class="fa-solid fa-magnifying-glass-plus"></i>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-index="1">
+      <img src="imagen2.jpg" alt="Galería 2" />
+      <div class="gallery-overlay">
+        <span>Detalles y cuidado</span>
+        <i class="fa-solid fa-magnifying-glass-plus"></i>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-index="2">
+      <img src="imagen3.jpg" alt="Galería 3" />
+      <div class="gallery-overlay">
+        <span>Espacio FaceSoff</span>
+        <i class="fa-solid fa-magnifying-glass-plus"></i>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-index="3">
+      <img src="imagen4.jpg" alt="Galería 4" />
+      <div class="gallery-overlay">
+        <span>Rutina y glow</span>
+        <i class="fa-solid fa-magnifying-glass-plus"></i>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL GALERÍA -->
+<div class="modal" id="galleryModal">
+  <span class="modal-close" id="modalClose"><i class="fa-solid fa-xmark"></i></span>
+  <span class="modal-prev" id="modalPrev"><i class="fa-solid fa-chevron-left"></i></span>
+
+  <img class="modal-img" id="modalImg" src="" alt="Vista ampliada" />
+
+  <span class="modal-next" id="modalNext"><i class="fa-solid fa-chevron-right"></i></span>
+</div>
+
+<!-- SOBRE NOSOTROS -->
+<section id="sobre" class="section reveal">
+  <div class="section-title">
+    <h2>Sobre FaceSoff</h2>
+  </div>
+
+  <div class="about">
+    <div class="about-text">
+      <p>FaceSoff nace como un espacio íntimo y cálido, pensado para que te tomes un respiro y te regales un momento de cuidado solo para vos.</p>
+
+      <p>Sofía trabaja con protocolos personalizados, combinando aparatología, técnicas manuales y productos seleccionados según tu tipo de piel y objetivo.</p>
+
+      <ul class="about-list">
+        <li><i class="fa-solid fa-circle-check"></i> Evaluación de piel antes de cada tratamiento.</li>
+        <li><i class="fa-solid fa-circle-check"></i> Seguimiento y acompañamiento de tu rutina en casa.</li>
+        <li><i class="fa-solid fa-circle-check"></i> Recomendaciones de productos profesionales.</li>
+      </ul>
+    </div>
+
+    <div class="about-box">
+      “El objetivo es que te vayas no solo con la piel más linda, sino también más relajada,
+      más liviana y con ganas de volver a cuidarte.”
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS + FAQ -->
+<section id="faq" class="section reveal">
+  <div class="section-title">
+    <h2>Experiencias y dudas frecuentes</h2>
+  </div>
+
+  <div class="faq">
+
+    <!-- TESTIMONIOS -->
+    <div class="testimonials" id="testimonialsBox">
+      <p class="testimonial-text" id="testimonialText">
+        “Me encantó la limpieza facial, sentí la piel súper suave y luminosa. Sofi es súper delicada y explica todo lo que va haciendo.”
       </p>
+
+      <div class="testimonial-author" id="testimonialAuthor">María</div>
+      <div class="testimonial-role" id="testimonialRole">Paciente FaceSoff</div>
+
+      <div class="testimonial-dots" id="testimonialDots"></div>
     </div>
 
-    <div class="highlights">
-      <div class="highlight-card">
-        <div class="highlight-icon">
-          <i class="fa-solid fa-wand-magic-sparkles"></i>
-        </div>
-        <h3>Tratamientos personalizados</h3>
-        <p>
-          Cada piel es única. Analizamos tu necesidad y armamos un protocolo a medida.
-        </p>
-      </div>
+    <!-- FAQ -->
+    <div class="faq-right">
+      <p class="faq-intro">
+        ¿Primera vez en una sesión de cosmetología? Acá respondemos algunas dudas frecuentes.
+      </p>
 
-      <div class="highlight-card">
-        <div class="highlight-icon">
-          <i class="fa-solid fa-droplet"></i>
-        </div>
-        <h3>Productos profesionales</h3>
-        <p>
-          Trabajamos con marcas reconocidas en dermocosmética y cuidado facial.
-        </p>
-      </div>
+      <div class="accordion" id="faqAccordion">
 
-      <div class="highlight-card">
-        <div class="highlight-icon">
-          <i class="fa-solid fa-heart"></i>
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>¿Cuánto dura una sesión?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="accordion-body">
+            <div class="accordion-body-inner">
+              Depende del tratamiento, pero en promedio entre 45 y 75 minutos.
+            </div>
+          </div>
         </div>
-        <h3>Espacio de bienestar</h3>
-        <p>
-          Ambiente cálido, cómodo y relajado para que disfrutes tu momento.
-        </p>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>¿Puedo ir maquillada?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="accordion-body">
+            <div class="accordion-body-inner">
+              Sí, en cabina realizamos la higiene y desmaquillado previo al tratamiento.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>¿Qué productos se usan?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="accordion-body">
+            <div class="accordion-body-inner">
+              Usamos marcas profesionales seleccionadas según cada tipo de piel.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>¿Con cuánta anticipación pedir turno?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="accordion-body">
+            <div class="accordion-body-inner">
+              Lo ideal es reservar con algunos días de anticipación, especialmente si buscás un horario fijo.
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
-  </section>
 
-  <!-- SERVICIOS -->
-  <section id="servicios" class="section reveal">
-    <div class="section-title">
-      <h2>Servicios</h2>
-      <p>Elegí tu experiencia, nosotras nos encargamos del resto.</p>
-    </div>
-
-    <div class="services-container">
-      <div class="services-tabs">
-        <button class="service-tab active" data-service="limpieza">
-          <span>
-            <i class="fa-solid fa-face-smile-beam"></i> Limpieza facial
-          </span>
-          <i class="fa-solid fa-chevron-right"></i>
-        </button>
-        <button class="service-tab" data-service="dermapen">
-          <span>
-            <i class="fa-solid fa-pen-nib"></i> Dermapen & Dermaplaning
-          </span>
-          <i class="fa-solid fa-chevron-right"></i>
-        </button>
-        <button class="service-tab" data-service="aparato">
-          <span>
-            <i class="fa-solid fa-bolt"></i> Aparatología
-          </span>
-          <i class="fa-solid fa-chevron-right"></i>
-        </button>
-        <button class="service-tab" data-service="productos">
-          <span>
-            <i class="fa-solid fa-flask"></i> Productos FS & asesoría
-          </span>
-          <i class="fa-solid fa-chevron-right"></i>
-        </button>
-      </div>
-
-      <div class="service-content" id="serviceContent">
-        <!-- contenido por JS -->
-      </div>
-    </div>
-  </section>
-
-  <!-- GALERÍA -->
-  <section id="galeria" class="section reveal">
-    <div class="section-title">
-      <h2>Galería</h2>
-      <p>Un vistazo a nuestro espacio y algunos resultados.</p>
-    </div>
-
-    <div class="gallery-grid" id="galleryGrid">
-      <div class="gallery-item" data-index="0">
-        <img src="imagen1.jpg" alt="Galería 1" />
-        <div class="gallery-overlay">
-          <span>Tratamiento en cabina</span>
-          <i class="fa-solid fa-magnifying-glass-plus"></i>
-        </div>
-      </div>
-      <div class="gallery-item" data-index="1">
-        <img src="imagen2.jpg" alt="Galería 2" />
-        <div class="gallery-overlay">
-          <span>Detalles y cuidado</span>
-          <i class="fa-solid fa-magnifying-glass-plus"></i>
-        </div>
-      </div>
-      <div class="gallery-item" data-index="2">
-        <img src="imagen3.jpg" alt="Galería 3" />
-        <div class="gallery-overlay">
-          <span>Espacio FaceSoff</span>
-          <i class="fa-solid fa-magnifying-glass-plus"></i>
-        </div>
-      </div>
-      <div class="gallery-item" data-index="3">
-        <img src="imagen4.jpg" alt="Galería 4" />
-        <div class="gallery-overlay">
-          <span>Rutina y glow</span>
-          <i class="fa-solid fa-magnifying-glass-plus"></i>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MODAL GALERÍA -->
-  <div class="modal" id="galleryModal">
-    <span class="modal-close" id="modalClose"><i class="fa-solid fa-xmark"></i></span>
-    <span class="modal-prev" id="modalPrev"><i class="fa-solid fa-chevron-left"></i></span>
-    <img class="modal-img" id="modalImg" src="" alt="Vista ampliada" />
-    <span class="modal-next" id="modalNext"><i class="fa-solid fa-chevron-right"></i></span>
   </div>
-
-  <!-- SOBRE NOSOTROS -->
-  <section id="sobre" class="section reveal">
-    <div class="section-title">
-      <h2>Sobre FaceSoff</h2>
-    </div>
-
-    <div class="about">
-      <div class="about-text">
-        <p>
-          FaceSoff nace como un espacio íntimo y cálido, pensado para que te tomes
-          un respiro y te regales un momento de cuidado solo para vos.
-        </p>
-        <p>
-          Sofía trabaja con protocolos personalizados, combinando aparatología,
-          técnicas manuales y productos seleccionados según tu tipo de piel y
-          objetivo.
-        </p>
-        <ul class="about-list">
-          <li><i class="fa-solid fa-circle-check"></i> Evaluación de piel antes de cada tratamiento.</li>
-          <li><i class="fa-solid fa-circle-check"></i> Seguimiento y acompañamiento de tu rutina en casa.</li>
-          <li><i class="fa-solid fa-circle-check"></i> Recomendaciones de productos profesionales.</li>
-        </ul>
-      </div>
-
-      <div class="about-box">
-        “El objetivo es que te vayas no solo con la piel más linda, sino también
-        más relajada, más liviana y con ganas de volver a cuidarte.”
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIOS & FAQ -->
-  <section id="faq" class="section reveal">
-    <div class="section-title">
-      <h2>Experiencias y dudas frecuentes</h2>
-    </div>
-
-    <div class="faq">
-      <!-- Testimonios -->
-      <div class="testimonials" id="testimonialsBox">
-        <p class="testimonial-text" id="testimonialText">
-          “Me encantó la limpieza facial, sentí la piel súper suave y luminosa. Sofi
-          es súper delicada y explica todo lo que va haciendo.”
-        </p>
-        <div class="testimonial-author" id="testimonialAuthor">María</div>
-        <div class="testimonial-role" id="testimonialRole">Paciente FaceSoff</div>
-        <div class="testimonial-dots" id="testimonialDots">
-          <!-- dots por JS -->
-        </div>
-      </div>
-
-      <!-- FAQ -->
-      <div class="faq-right">
-        <p class="faq-intro">
-          ¿Primera vez en una sesión de cosmetología? Acá respondemos algunas de
-          las dudas más comunes. Si necesitás más info, siempre podés escribirnos
-          por WhatsApp.
-        </p>
-
-        <div class="accordion" id="faqAccordion">
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <span>¿Cuánto dura una sesión?</span>
-              <i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="accordion-body">
-              <div class="accordion-body-inner">
-                Depende del tratamiento, pero en promedio una sesión dura entre
-                45 y 75 minutos. Siempre te avisamos antes para que puedas organizarte.
-              </div>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <span>¿Puedo ir maquillada?</span>
-              <i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="accordion-body">
-              <div class="accordion-body-inner">
-                Podés venir maquillada, no hay problema. En cabina realizamos la
-                higiene y desmaquillamos la piel antes de comenzar el tratamiento.
-              </div>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <span>¿Qué productos se usan en los tratamientos?</span>
-              <i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="accordion-body">
-              <div class="accordion-body-inner">
-                Trabajamos con marcas profesionales de dermocosmética y activos
-                específicos para cada necesidad, siempre buscando el equilibrio
-                entre eficacia y cuidado.
-              </div>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <span>¿Con cuánta anticipación pido turno?</span>
-              <i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="accordion-body">
-              <div class="accordion-body-inner">
-                Lo ideal es reservar con algunos días de anticipación, sobre todo
-                si buscás un horario fijo. De todas formas, podés escribirnos y
-                vemos disponibilidad.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
+</section>
   <!-- CONTACTO -->
-  <section id="contacto" class="section reveal">
-    <div class="section-title">
-      <h2>Contacto</h2>
-      <p>Consultas y turnos exclusivamente por WhatsApp.</p>
-    </div>
-
-    <div class="contact-section">
-      <p>Estamos en Chilavert, Buenos Aires.</p>
-      <a
-        href="https://wa.me/5491155943200?text=Hola%20Sofi,%20quiero%20hacer%20una%20consulta%20✨"
-        target="_blank"
-        class="btn-contact"
-      >
-        <i class="fab fa-whatsapp"></i> Escribir por WhatsApp
-      </a>
-    </div>
-  </section>
-
-  <!-- BOTONES FLOTANTES -->
-  <a
-    href="https://wa.me/5491155943200?text=Hola%20Sofi,%20quiero%20hacer%20una%20consulta%20✨"
-    class="whatsapp-btn"
-    target="_blank"
-  >
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-  <div class="scroll-top" id="scrollTopBtn">
-    <i class="fa-solid fa-chevron-up"></i>
+<section id="contacto" class="section reveal">
+  <div class="section-title">
+    <h2>Contacto</h2>
+    <p>Consultas y turnos exclusivamente por WhatsApp.</p>
   </div>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2025 FaceSoff · Sitio desarrollado con amor y skin care
-  </footer>
+  <div class="contact-section">
+    <p>Estamos en Chilavert, Buenos Aires.</p>
 
-  <!-- JS -->
-  <script>
-    // NAV MOBILE
-    const navToggle = document.getElementById("navToggle");
-    const navLinks = document.getElementById("navLinks");
+    <a
+      href="https://wa.me/5491155943200?text=Hola%20Sofi,%20quiero%20hacer%20una%20consulta%20✨"
+      target="_blank"
+      class="btn-contact"
+    >
+      <i class="fab fa-whatsapp"></i> Escribir por WhatsApp
+    </a>
+  </div>
+</section>
 
-    if (navToggle) {
-      navToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("open");
-      });
-    }
+<!-- BOTONES FLOTANTES -->
+<a
+  href="https://wa.me/5491155943200?text=Hola%20Sofi,%20quiero%20hacer%20una%20consulta%20✨"
+  class="whatsapp-btn"
+  target="_blank"
+>
+  <i class="fab fa-whatsapp"></i>
+</a>
 
-    // Cerrar menú al hacer click en un link (mobile)
-    document.querySelectorAll(".nav-links a").forEach((link) => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("open");
-      });
-    });
+<a
+  href="https://www.instagram.com/face.soff"
+  target="_blank"
+  class="instagram-btn"
+>
+  <i class="fab fa-instagram"></i>
+</a>
 
-    // SERVICIOS (TABS)
-    const serviceContent = document.getElementById("serviceContent");
-    const serviceTabs = document.querySelectorAll(".service-tab");
+<div class="scroll-top" id="scrollTopBtn">
+  <i class="fa-solid fa-chevron-up"></i>
+</div>
 
-    const serviciosInfo = {
-      limpieza: {
-        titulo: "Limpieza profunda de cutis",
-        texto:
-          "Ideal para renovar la piel, liberar impurezas y devolverle luminosidad. Incluye higiene, exfoliación, extracción suave (si corresponde), mascarilla y finalización según tipo de piel.",
-        items: [
-          "Evaluación inicial de la piel",
-          "Higiene profunda y desmaquillado",
-          "Exfoliación suave o más intensa según necesidad",
-          "Mascarillas específicas",
-          "Recomendaciones para cuidado en casa",
-        ],
-        pills: ["Piel más luminosa", "Poros más limpios", "Sensación de frescura"],
-      },
-      dermapen: {
-        titulo: "Dermapen & Dermaplaning",
-        texto:
-          "Técnicas que ayudan a mejorar textura, manchas suaves, líneas finas y aportar glow. Siempre trabajadas con protocolo previo y post cuidado.",
-        items: [
-          "Estimulación de colágeno",
-          "Mejora de textura",
-          "Reducción de apariencia de poros",
-          "Asesoramiento post-tratamiento",
-        ],
-        pills: ["Glow", "Textura más uniforme", "Tratamiento progresivo"],
-      },
-      aparato: {
-        titulo: "Aparatología facial",
-        texto:
-          "Complementamos los tratamientos con aparatología para potenciar resultados: alta frecuencia, punta de diamante y otras herramientas según cada piel.",
-        items: [
-          "Alta frecuencia",
-          "Punta de diamante",
-          "Complemento a limpiezas y protocolos",
-          "Uso responsable y personalizado",
-        ],
-        pills: ["Potencia resultados", "Se combina con faciales", "En cabina"],
-      },
-      productos: {
-        titulo: "Productos FS & asesoría de rutina",
-        texto:
-          "Te acompañamos a armar o ajustar tu rutina diaria para que los resultados de cabina se mantengan en casa. Trabajamos con líneas profesionales seleccionadas.",
-        items: [
-          "Asesoría según tipo de piel",
-          "Rutina de día y noche",
-          "Selección de productos",
-          "Seguimiento y ajustes",
-        ],
-        pills: ["Rutina personalizada", "Productos profesionales", "Acompañamiento"],
-      },
-    };
+<!-- FOOTER -->
+<footer>
+  © 2025 FaceSoff · Sitio desarrollado con amor y skin care
+</footer>
 
-    function renderServicio(key) {
-      const data = serviciosInfo[key];
-      if (!data || !serviceContent) return;
+<!-- -------------------------------------- -->
+<!--        JS GENERAL + NAVIDAD            -->
+<!-- -------------------------------------- -->
 
-      serviceContent.innerHTML = `
-        <h3>${data.titulo}</h3>
-        <p>${data.texto}</p>
-        <ul>
-          ${data.items.map((i) => `<li>${i}</li>`).join("")}
-        </ul>
-        <div class="pill-list">
-          ${data.pills.map((p) => `<span class="pill">${p}</span>`).join("")}
-        </div>
-      `;
-    }
+<script>
+/* ---------------- NAV RESPONSIVE ---------------- */
+const navToggle = document.getElementById("navToggle");
+const navLinks = document.getElementById("navLinks");
 
-    serviceTabs.forEach((tab) => {
-      tab.addEventListener("click", () => {
-        serviceTabs.forEach((t) => t.classList.remove("active"));
-        tab.classList.add("active");
-        const key = tab.getAttribute("data-service");
-        renderServicio(key);
-      });
-    });
+if (navToggle) {
+  navToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+  });
+}
 
-    // Render inicial
-    renderServicio("limpieza");
+document.querySelectorAll(".nav-links a").forEach((link) => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+  });
+});
 
-    // GALERÍA MODAL
-    const galleryItems = document.querySelectorAll(".gallery-item");
-    const galleryModal = document.getElementById("galleryModal");
-    const modalImg = document.getElementById("modalImg");
-    const modalClose = document.getElementById("modalClose");
-    const modalPrev = document.getElementById("modalPrev");
-    const modalNext = document.getElementById("modalNext");
+/* ---------------- SERVICIOS (TABS) ---------------- */
+const serviceContent = document.getElementById("serviceContent");
+const serviceTabs = document.querySelectorAll(".service-tab");
 
-    const galleryImages = [
-      "imagen1.jpg",
-      "imagen2.jpg",
-      "imagen3.jpg",
-      "imagen4.jpg",
-    ];
+const serviciosInfo = {
+  limpieza: {
+    titulo: "Limpieza profunda de cutis",
+    texto:
+      "Ideal para renovar la piel, liberar impurezas y devolverle luminosidad.",
+    items: [
+      "Evaluación inicial de la piel",
+      "Higiene profunda",
+      "Exfoliación personalizada",
+      "Mascarillas específicas",
+      "Recomendaciones para cuidado en casa"
+    ],
+    pills: ["Luminosidad", "Poros limpios", "Frescura"]
+  },
 
-    let currentIndex = 0;
+  dermapen: {
+    titulo: "Dermapen & Dermaplaning",
+    texto:
+      "Mejora textura, manchas suaves, líneas finas y aporta glow.",
+    items: [
+      "Estimulación de colágeno",
+      "Mejora de textura",
+      "Reducción de poros",
+      "Asesoramiento post-tratamiento"
+    ],
+    pills: ["Glow", "Textura uniforme", "Progresivo"]
+  },
 
-    function openModal(index) {
-      currentIndex = index;
-      if (!galleryModal || !modalImg) return;
-      modalImg.src = galleryImages[currentIndex];
-      galleryModal.classList.add("open");
-    }
+  aparato: {
+    titulo: "Aparatología facial",
+    texto:
+      "Herramientas que potencian los resultados de tus tratamientos.",
+    items: ["Alta frecuencia", "Punta de diamante", "Complemento facial"],
+    pills: ["Potencia", "Combina con faciales", "Resultados"]
+  },
 
-    function closeModal() {
-      if (!galleryModal) return;
-      galleryModal.classList.remove("open");
-    }
+  productos: {
+    titulo: "Productos FS & asesoría",
+    texto:
+      "Acompañamos tu rutina diaria con productos seleccionados.",
+    items: ["Rutina personalizada", "Revisión de piel", "Seguimiento"],
+    pills: ["Profesional", "Personalizado", "Acompañamiento"]
+  }
+};
 
-    function prevImage() {
-      currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-      modalImg.src = galleryImages[currentIndex];
-    }
+function renderServicio(key) {
+  const data = serviciosInfo[key];
+  if (!data) return;
 
-    function nextImage() {
-      currentIndex = (currentIndex + 1) % galleryImages.length;
-      modalImg.src = galleryImages[currentIndex];
-    }
+  serviceContent.innerHTML = `
+    <h3>${data.titulo}</h3>
+    <p>${data.texto}</p>
+    <ul>${data.items.map((i) => `<li>${i}</li>`).join("")}</ul>
+    <div class="pill-list">
+      ${data.pills.map((p) => `<span class="pill">${p}</span>`).join("")}
+    </div>`;
+}
 
-    galleryItems.forEach((item) => {
-      item.addEventListener("click", () => {
-        const index = parseInt(item.getAttribute("data-index"), 10) || 0;
-        openModal(index);
-      });
-    });
+serviceTabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    serviceTabs.forEach((t) => t.classList.remove("active"));
+    tab.classList.add("active");
+    renderServicio(tab.dataset.service);
+  });
+});
 
-    if (modalClose) modalClose.addEventListener("click", closeModal);
-    if (modalPrev) modalPrev.addEventListener("click", prevImage);
-    if (modalNext) modalNext.addEventListener("click", nextImage);
+renderServicio("limpieza");
 
-    if (galleryModal) {
-      galleryModal.addEventListener("click", (e) => {
-        if (e.target === galleryModal) {
-          closeModal();
-        }
-      });
-    }
+/* ---------------- GALERÍA MODAL ---------------- */
+const galleryItems = document.querySelectorAll(".gallery-item");
+const galleryModal = document.getElementById("galleryModal");
+const modalImg = document.getElementById("modalImg");
+const modalClose = document.getElementById("modalClose");
+const modalPrev = document.getElementById("modalPrev");
+const modalNext = document.getElementById("modalNext");
 
-    // TESTIMONIOS
-    const testimonios = [
-      {
-        texto:
-          "Me encantó la limpieza facial, sentí la piel súper suave y luminosa. Sofi es súper delicada y explica todo lo que va haciendo.",
-        autor: "María",
-        rol: "Paciente FaceSoff",
-      },
-      {
-        texto:
-          "Noté un cambio real en mi piel después de las sesiones y la rutina que me recomendó. Súper dedicada.",
-        autor: "Camila",
-        rol: "Paciente FaceSoff",
-      },
-      {
-        texto:
-          "Hermoso espacio, muy prolijo y relajante. Se nota el amor con el que trabaja.",
-        autor: "Lucía",
-        rol: "Paciente FaceSoff",
-      },
-    ];
+const galleryImages = ["imagen1.jpg", "imagen2.jpg", "imagen3.jpg", "imagen4.jpg"];
+let currentIndex = 0;
 
-    const tText = document.getElementById("testimonialText");
-    const tAuthor = document.getElementById("testimonialAuthor");
-    const tRole = document.getElementById("testimonialRole");
-    const tDotsContainer = document.getElementById("testimonialDots");
+function openModal(i) {
+  currentIndex = i;
+  modalImg.src = galleryImages[i];
+  galleryModal.classList.add("open");
+}
 
-    let currentTestimonial = 0;
+function closeModal() {
+  galleryModal.classList.remove("open");
+}
 
-    if (tDotsContainer) {
-      testimonios.forEach((_, idx) => {
-        const dot = document.createElement("div");
-        dot.classList.add("dot");
-        if (idx === 0) dot.classList.add("active");
-        dot.addEventListener("click", () => {
-          setTestimonial(idx);
-        });
-        tDotsContainer.appendChild(dot);
-      });
-    }
+function prevImage() {
+  currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+  modalImg.src = galleryImages[currentIndex];
+}
 
-    function setTestimonial(index) {
-      currentTestimonial = index;
-      const data = testimonios[index];
-      if (!data) return;
+function nextImage() {
+  currentIndex = (currentIndex + 1) % galleryImages.length;
+  modalImg.src = galleryImages[currentIndex];
+}
 
-      if (tText) tText.textContent = "“" + data.texto + "”";
-      if (tAuthor) tAuthor.textContent = data.autor;
-      if (tRole) tRole.textContent = data.rol;
+galleryItems.forEach((item) => {
+  item.addEventListener("click", () => openModal(Number(item.dataset.index)));
+});
 
-      const dots = document.querySelectorAll(".dot");
-      dots.forEach((d) => d.classList.remove("active"));
-      if (dots[index]) dots[index].classList.add("active");
-    }
+modalClose.addEventListener("click", closeModal);
+modalPrev.addEventListener("click", prevImage);
+modalNext.addEventListener("click", nextImage);
 
-    // Auto-rotar cada 7 segundos
-    setInterval(() => {
-      const nextIndex = (currentTestimonial + 1) % testimonios.length;
-      setTestimonial(nextIndex);
-    }, 7000);
+galleryModal.addEventListener("click", (e) => {
+  if (e.target === galleryModal) closeModal();
+});
 
-    // FAQ (ACCORDION)
-    const accordionItems = document.querySelectorAll(".accordion-item");
-    accordionItems.forEach((item) => {
-      const header = item.querySelector(".accordion-header");
-      header.addEventListener("click", () => {
-        item.classList.toggle("open");
-      });
-    });
+/* ---------------- TESTIMONIOS ---------------- */
+const testimonios = [
+  {
+    texto: "Me encantó la limpieza facial, súper suave y luminosa.",
+    autor: "María",
+    rol: "Paciente FaceSoff"
+  },
+  {
+    texto: "Noté un cambio real en mi piel con la rutina recomendada.",
+    autor: "Camila",
+    rol: "Paciente FaceSoff"
+  },
+  {
+    texto: "Hermoso espacio, relajante y súper profesional.",
+    autor: "Lucía",
+    rol: "Paciente FaceSoff"
+  }
+];
 
-    // SCROLL TOP
-    const scrollTopBtn = document.getElementById("scrollTopBtn");
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 300) {
-        scrollTopBtn.classList.add("visible");
-      } else {
-        scrollTopBtn.classList.remove("visible");
+let tIndex = 0;
+const tText = document.getElementById("testimonialText");
+const tAuthor = document.getElementById("testimonialAuthor");
+const tRole = document.getElementById("testimonialRole");
+const tDots = document.getElementById("testimonialDots");
+
+testimonios.forEach((_, i) => {
+  let dot = document.createElement("div");
+  dot.classList.add("dot");
+  if (i === 0) dot.classList.add("active");
+  dot.addEventListener("click", () => setTestimonio(i));
+  tDots.appendChild(dot);
+});
+
+function setTestimonio(i) {
+  tIndex = i;
+  tText.textContent = "“" + testimonios[i].texto + "”";
+  tAuthor.textContent = testimonios[i].autor;
+  tRole.textContent = testimonios[i].rol;
+
+  document.querySelectorAll(".dot").forEach((d) => d.classList.remove("active"));
+  document.querySelectorAll(".dot")[i].classList.add("active");
+}
+
+setInterval(() => {
+  tIndex = (tIndex + 1) % testimonios.length;
+  setTestimonio(tIndex);
+}, 7000);
+
+/* ---------------- FAQ ACCORDION ---------------- */
+document.querySelectorAll(".accordion-header").forEach((header) => {
+  header.addEventListener("click", () => {
+    header.parentElement.classList.toggle("open");
+  });
+});
+
+/* ---------------- SCROLL TOP ---------------- */
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) scrollTopBtn.classList.add("visible");
+  else scrollTopBtn.classList.remove("visible");
+});
+
+scrollTopBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+/* ---------------- ANIMACIONES AL SCROLL ---------------- */
+const reveals = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
       }
     });
+  },
+  { threshold: 0.15 }
+);
 
-    if (scrollTopBtn) {
-      scrollTopBtn.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-    }
+reveals.forEach((el) => observer.observe(el));
 
-    // ANIMACIONES AL SCROLL (IntersectionObserver)
-    const reveals = document.querySelectorAll(".reveal");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
+/* ---------------- NIEVE NAVIDAD ---------------- */
+function crearNieve() {
+  for (let i = 0; i < 15; i++) {
+    let snow = document.createElement("div");
+    snow.classList.add("snowflake");
+    snow.style.left = Math.random() * 100 + "vw";
+    snow.style.animationDuration = 4 + Math.random() * 6 + "s";
+    snow.textContent = "❄";
 
-    reveals.forEach((el) => observer.observe(el));
-  </script>
-</body>
-</html>
+    if (navidadActiva) document.body.appendChild(snow);
+    setTimeout(() => snow.remove(), 9000);
+  }
+}
+
+let nieveInterval = null;
+
+/* ---------------- MODO NAVIDAD ON / OFF ---------------- */
+let navidadActiva = true; // inicia encendido
+
+const navidadToggle = document.getElementById("navidadToggle");
+
+function activarNavidad() {
+  document.body.classList.add("navidad");
+  navidadToggle.textContent = "🎄";
+  nieveInterval = setInterval(crearNieve, 1500);
+}
+
+function desactivarNavidad() {
+  document.body.classList.remove("navidad");
+  navidadToggle.textContent = "✨";
+  clearInterval(nieveInterval);
+}
+
+navidadToggle.addEventListener("click", () => {
+  navidadActiva = !navidadActiva;
+  navidadActiva ? activarNavidad() : desactivarNavidad();
+});
+
+activarNavidad(); // inicia con navidad encendida
+
+</script>
+
+
