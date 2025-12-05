@@ -1,22 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FaceSoff · Sofía Bareiro</title>
 
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
   <!-- Íconos -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
   />
 
-<body>
   <!-- Fuente -->
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
@@ -640,7 +634,6 @@
       box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
     }
 
-  <!-- NAV -->
     .btn-contact i {
       font-size: 1.2rem;
     }
@@ -764,9 +757,6 @@
   <!-- NAVBAR -->
   <nav class="navbar">
     <div class="nav-logo">FaceSoff</div>
-    <div class="nav-links">
-      <a href="#presentacion">Inicio</a>
-      <a href="#galeria">Galería</a>
     <div class="nav-links" id="navLinks">
       <a href="#inicio">Inicio</a>
       <a href="#servicios">Servicios</a>
@@ -781,11 +771,6 @@
   </nav>
 
   <!-- HERO -->
-  <header class="hero">
-    <div class="hero-content">
-      <h1>FaceSoff</h1>
-      <p>Cosmetología · Belleza · Bienestar</p>
-      <a href="#contacto" class="btn-hero">Contáctanos</a>
   <section id="inicio" class="hero">
     <div class="hero-text reveal">
       <div class="hero-badges">
@@ -820,12 +805,7 @@
         </a>
       </div>
     </div>
-  </header>
 
-  <!-- PRESENTACIÓN -->
-  <section id="presentacion" class="section">
-    <div class="presentacion-img">
-      <img src="FaceSoff_Presentacion.png" alt="FaceSoff Presentación">
     <div class="hero-img-wrapper reveal">
       <div class="hero-img">
         <img src="FaceSoff_Presentacion.png" alt="FaceSoff" />
@@ -921,19 +901,12 @@
   </section>
 
   <!-- GALERÍA -->
-  <section id="galeria" class="section">
-    <h2>Galería</h2>
   <section id="galeria" class="section reveal">
     <div class="section-title">
       <h2>Galería</h2>
       <p>Un vistazo a nuestro espacio y algunos resultados.</p>
     </div>
 
-    <div class="galeria-grid">
-      <img src="imagen1.jpg" onclick="abrirModal(this.src)">
-      <img src="imagen2.jpg" onclick="abrirModal(this.src)">
-      <img src="imagen3.jpg" onclick="abrirModal(this.src)">
-      <img src="imagen4.jpg" onclick="abrirModal(this.src)">
     <div class="gallery-grid" id="galleryGrid">
       <div class="gallery-item" data-index="0">
         <img src="imagen1.jpg" alt="Galería 1" />
@@ -966,9 +939,6 @@
     </div>
   </section>
 
-  <!-- MODAL -->
-  <div id="modal" class="modal" onclick="cerrarModal()">
-    <img id="modal-img">
   <!-- MODAL GALERÍA -->
   <div class="modal" id="galleryModal">
     <span class="modal-close" id="modalClose"><i class="fa-solid fa-xmark"></i></span>
@@ -977,19 +947,12 @@
     <span class="modal-next" id="modalNext"><i class="fa-solid fa-chevron-right"></i></span>
   </div>
 
-  <!-- SERVICIOS -->
-  <section id="servicios" class="section">
-    <h2>Servicios</h2>
   <!-- SOBRE NOSOTROS -->
   <section id="sobre" class="section reveal">
     <div class="section-title">
       <h2>Sobre FaceSoff</h2>
     </div>
 
-    <div class="cards">
-      <div class="card">
-        <h3>✨ Servicios Cosmetológicos</h3>
-        <p>Limpieza profunda · Punta de diamante · Dermapen · Dermaplaning · Alta frecuencia.</p>
     <div class="about">
       <div class="about-text">
         <p>
@@ -1008,9 +971,6 @@
         </ul>
       </div>
 
-      <div class="card">
-        <h3>🧴 Productos FS</h3>
-        <p>LIDHERMA · IDRAET · EXEL · ICONO y más.</p>
       <div class="about-box">
         “El objetivo es que te vayas no solo con la piel más linda, sino también
         más relajada, más liviana y con ganas de volver a cuidarte.”
@@ -1018,12 +978,6 @@
     </div>
   </section>
 
-  <!-- SOBRE -->
-  <section id="sobre" class="section">
-    <h2>Sobre FaceSoff</h2>
-    <div class="sobre-box">
-      Espacio dedicado al cuidado facial y bienestar personal.  
-      Tratamientos profesionales con aparatología y productos de primera línea para una piel luminosa, cuidada y saludable.
   <!-- TESTIMONIOS & FAQ -->
   <section id="faq" class="section reveal">
     <div class="section-title">
@@ -1111,9 +1065,6 @@
     </div>
   </section>
 
-  <!-- CONTACTO (SOLO WHATSAPP) -->
-  <section id="contacto" class="section">
-    <h2>Contacto</h2>
   <!-- CONTACTO -->
   <section id="contacto" class="section reveal">
     <div class="section-title">
@@ -1121,11 +1072,6 @@
       <p>Consultas y turnos exclusivamente por WhatsApp.</p>
     </div>
 
-    <div class="contacto-box">
-      <a href="https://wa.me/5491155943200?text=Hola%20Sofi,%20quiero%20hacer%20una%20consulta%20✨"
-         target="_blank"
-         class="btn-contacto-wsp">
-         <i class="fab fa-whatsapp"></i> Escribir por WhatsApp
     <div class="contact-section">
       <p>Estamos en Chilavert, Buenos Aires.</p>
       <a
@@ -1138,9 +1084,6 @@
     </div>
   </section>
 
-  <!-- BOTÓN FLOTANTE WHATSAPP -->
-  <a href="https://wa.me/5491155943200?text=Hola%20Sofi,%20quiero%20hacer%20una%20consulta%20✨"
-     class="whatsapp-btn" target="_blank">
   <!-- BOTONES FLOTANTES -->
   <a
     href="https://wa.me/5491155943200?text=Hola%20Sofi,%20quiero%20hacer%20una%20consulta%20✨"
@@ -1156,11 +1099,9 @@
 
   <!-- FOOTER -->
   <footer>
-    © 2025 FaceSoff · by Sofía Bareiro
     © 2025 FaceSoff · Sitio desarrollado con amor y skin care
   </footer>
 
-  <script src="script.js"></script>
   <!-- JS -->
   <script>
     // NAV MOBILE
